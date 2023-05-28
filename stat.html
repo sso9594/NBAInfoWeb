@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset = "utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <title>Document</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<style>
+    @import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+
+    #logo {
+        float : left;
+        align-items : center;
+        justify-content : center;
+        display : flex;
+        font-size : 30px;
+    }
+
+    #logo_name {
+        padding-left : 10px;
+    }
+
+    #menu {
+        float : right;
+        align-items : center;
+        justify-content : center;
+        display : flex;
+    }
+
+    #nav, #logo, #menu {
+        height : 100px;
+    }
+
+    ul > li {
+        display : inline;
+        padding : 15px;
+        font-size : 20px;
+    }
+
+    ul > li > a {
+        color : black;
+        text-decoration : none;
+    }
+
+    ul > li > a:hover {
+        color : red;
+        text-decoration : none;
+    }
+
+    body {
+        background-color : grey;
+    }
+
+    .footer {
+        background-color: white;
+        clear: both;
+    }
+
+    #foot_maker{
+        float : left;
+        font-size : 12px;
+    }
+
+    #foot_sns {
+        float : right;
+    }
+
+    .footer_img {
+        width : 25px;
+        height : 25px;
+    }
+    .content{
+        width: 70%;
+        margin: auto;
+    }
+    .subnav{
+        border: none;
+        background-color: transparent;
+        font-size: 20px;
+    }
+    .subnav:hover{
+        color: beige;
+    }
+    #content_nav{
+        text-align: center;
+    }
+
+    .subnav {
+      display: inline-block;
+      margin: 5px;
+    }
+    .tab {
+      display: none;
+    }
+    .selected {
+      color: beige; /* 선택한 버튼의 폰트 색상 */
+    }
+
+    #table_div{
+        border: 1px #a39485 solid;
+        box-shadow: 0 2px 5px rgba(0,0,0,.25);
+        width: 100%;
+        border-radius: 5px;
+        overflow: hidden;
+        background-color: #42444e;
+    }
+
+    .firstRow {
+        background: black;
+        color: #fff;
+        height: 50px;
+        font-size: 17px;
+    }
+    .wholeRow {
+        background-color: #42444e;
+        color: white;
+        text-align: left;
+        height: 40px;
+        font-size: 15px;
+    }
+    .wholeRow:hover{
+        background-color: gray;
+    }
+    #buttonArea{
+        text-align: center;
+    }
+    #buttonArea button{
+        display: inline-block;
+    }
+    .compare{
+        float: left;
+    }
+    .compbox{
+        width: 300px;
+        height: 300px;
+    }
+    #vsBox{
+        display: flex;
+        justify-content : center;
+        align-items : center;
+    }
+    </style>
+
+
+
+    <script>
+        tabName = "LEAGUE_STANDINGS";
+
+        function showTab(tabName, element) {     
+            // 모든 탭 숨기기
+            var tabs = document.getElementsByClassName('tab');
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].style.display = 'none';
+            }
+      
+            // 선택한 탭 보이기
+            var selectedTab = document.getElementById(tabName);
+            selectedTab.style.display = 'block';
+
+            var buttons = document.getElementsByClassName('subnav');
+            for (var i = 0; i < buttons.length; i++) {
+            buttons[i].classList.remove('selected');
+            }
+      
+            // 선택한 버튼에 스타일 적용
+            element.classList.add('selected');
+        }
+
+        window.onload = function() {
+            var defaultTab = document.getElementById('defaultTab'); 
+            var defaultButton = document.getElementById('defaultButton');
+            showTab('LEAGUE_STANDINGS',defaultTab);
+            showTable('Eastern',defaultButton);
+        };
+
+        var cssClassNames = {
+            tableRow: 'wholeRow',
+            headerRow: 'firstRow'
+        };
+
+        
+        google.charts.load('current', {'packages':['table']});
+        google.charts.setOnLoadCallback(drawTable);
+
+        function drawTable() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('number', 'POSITION');
+            data.addColumn('string', 'TEAM');
+            data.addColumn('number', 'W');
+            data.addColumn('number', 'L');
+            data.addColumn('number', 'WIN%');
+            data.addColumn('number', 'GB');
+            data.addColumn('string', 'CONF');
+            data.addColumn('string', 'DIV');
+            data.addColumn('string', 'HOME');
+            data.addColumn('string', 'ROAD');
+            data.addColumn('string', 'OT');
+            data.addColumn('string', 'LAST10');
+            data.addColumn('number', 'STREAK');
+            data.addRows([
+                [1,'Milwaukee Bucks', 58, 24, 0.707, 0, '35-17', '11-5', '32-9', '26-15', '3-2', '6-4', {v:-2,   f: '2L'}],
+                [2,'Boston Celtics',  57, 25, 0.695, 1, '34-18', '11-5', '32-9', '25-16', '4-7', '8-2', {v:-3,   f: '3L'}],
+                [3,'Philadelphia 76ers',  54, 28, 0.659, 4, '34-18', '10-6', '29-12', '25-16', '4-2', '5-5', {v:2,   f: '2W'}],
+                [4,'Cleveland Cavaliers',  51, 31, 0.622, 7, '34-18', '13-3', '31-10', '20-21', '7-0', '7-3', {v:-1,   f: '1L'}],
+                [5, 'NEW YORK KNICKS', 47, 35, 0.573, 11, '32-20', '8-8', '23-18', '24-17', '4-6', '5-5', {v:-2,   f: '2L'}],
+                [6,'Brooklyn Nets',	45, 37,	0.549, 13, '30-22', '7-9', '23-18',	'22-19'	, '1-1', '6-4', {v:-1,   f: '1L'}],
+                [7, 'Atlanta Hawks', 41, 41, 0.500,	17,	'26-26', '8-8', '24-17', '17-24', '4-2', '5-5', {v:-2,   f: '2L'}],
+                [8, 'Miami Heat', 44, 38, 0.537, 14, '24-28', '10-6', '27-14', '17-24', '3-2', '6-4', {v:1,   f: '1W'}],
+                [9, 'Toronto Raptors', 41, 41, 0.500, 17, '26-26', '4-12', '27-14', '14-27',	'2-3', '6-4', {v:1,   f: '1W'}],
+                [10, 'Chicago Bull', 40, 42, 0.488,	18,	'27-25', '7-9', '22-19', '18-23', '3-4', '6-4',	{v:2,   f: '2W'}],
+                [11, 'Indiana Pacers', 35, 47, 0.427, 23, '24-28', '7-9', '20-21', '15-26', '1-2', '3-7', {v:1,   f: '1W'}],
+                [12, 'Washington Wizards', 35, 47, 0.427, 23, '21-31', '8-8', '19-22', '16-25', '1-2', '3-7', {v:-1,   f: '1L'}],
+                [13, 'Orlando Magic', 34, 48, 0.415, 24, '20-32', '7-9', '20-21', '14-27', '2-2', '5-5', {v:-4,   f: '4L'}],
+                [14, 'Charlotte Hornets', 27, 55, 0.329, 31, '15-37', '7-9', '13-28', '14-27', '1-4', '5-5', {v:1,   f: '1W'}],
+                [15, 'Detroit Pistons', 17, 65, 0.207, 41, '8-44', '2-14', '9-32', '8-33', '3-1', '1-9', {v:-1,   f: '1L'}]
+            ]);
+            var table = new google.visualization.Table(document.getElementById('table_div'));
+            table.draw(data, {showRowNumber: false, width: '100%', height: '100%',cssClassNames: cssClassNames,alternatingRowStyle: false});
+        }
+
+        function showTable(tableName, element) {     
+            // 모든 탭 숨기기
+            var tabs = document.getElementsByClassName('TB');
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].style.display = 'none';
+            }
+      
+            // 선택한 탭 보이기
+            var selectedTab = document.getElementById(tableName);
+            selectedTab.style.display = 'block';
+
+            var buttons = document.getElementsByClassName('Tbutton');
+            for (var i = 0; i < buttons.length; i++) {
+            buttons[i].classList.remove('selected');
+            }
+      
+            // 선택한 버튼에 스타일 적용
+            element.classList.add('selected');
+        }
+
+        google.charts.load('current', {'packages':['table']});
+        google.charts.setOnLoadCallback(drawTable2);
+
+        function drawTable2() {
+            var data2 = new google.visualization.DataTable();
+            data2.addColumn('number', 'POSITION');
+            data2.addColumn('string', 'TEAM');
+            data2.addColumn('number', 'W');
+            data2.addColumn('number', 'L');
+            data2.addColumn('number', 'WIN%');
+            data2.addColumn('number', 'GB');
+            data2.addColumn('string', 'CONF');
+            data2.addColumn('string', 'DIV');
+            data2.addColumn('string', 'HOME');
+            data2.addColumn('string', 'ROAD');
+            data2.addColumn('string', 'OT');
+            data2.addColumn('string', 'LAST10');
+            data2.addColumn('number', 'STREAK');
+            data2.addRows([
+                [1, 'Denver Nuggets', 53, 29, 0.646, 0, '34-18', '10-6', '34-7', '19-22', '3-0', '5-5', {v:1,   f: '1W'}],
+                [2, 'Memphis Grizzlies', 51, 31, 0.622, 2, '30-22', '13-3', '35-6', '16-25', '3-1', '6-4', {v:-1,   f: '1L'}],
+                [3, 'Sacramento Kings',	48, 34, 0.585, 5, '32-20', '9-7', '23-18', '25-16', '4-1', '5-5', {v:-3,   f: '3L'}],
+                [4, 'Phoenix Suns', 45, 37, 0.549, 8, '30-22', '9-7', '28-13', '17-24', '1-3', '7-3', {v:-2,   f: '2L'}],
+                [5, 'LA Clippers', 44, 38, 0.537, 9, '27-25', '9-7', '23-18', '21-20', '2-3', '6-4', {v:3,   f: '3W'}],
+                [6, 'Golden State Warriors', 44, 38, 0.537, 9, '30-22', '7-9', '33-8', '11-30', '2-3', '8-2', {v:3,   f: '3W'}],
+                [7, 'Los Angeles Lakers', 43, 39, 0.524, 10, '27-25', '6-10', '23-18', '20-21', '3-4', '8-2', {v:2,   f: '2W'}],
+                [8, 'Minnesota Timberwolves', 42, 40, 0.512, 11, '29-23', '8-8', '22-19', '20-21', '1-4', '7-3', {v:3,   f: '3W'}],
+                [9, 'New Orleans Pelicans', 42, 40, 0.512, 11, '29-23', '11-5', '27-14', '15-26', '3-4', '7-3', {v:-1,   f: '1L'}],
+                [10, 'Oklahoma City Thunder', 40, 42, 0.488, 13, '25-27', '9-7', '24-17', '16-25', '2-4', '4-6', {v:2,   f: '2W'}],
+                [11, 'Dallas Mavericks', 38, 44, 0.463, 15, '28-24', '9-7', '23-18', '15-26', '4-5', '2-8', {v:-2,   f: '2L'}],
+                [12, 'Utah Jazz', 37, 45, 0.451, 16, '24-28', '6-10', '23-18', '14-27', '4-1', '2-8', {v:-1,   f: '1L'}],
+                [13, 'Portland Trail Blazers', 33, 49, 0.402, 20, '23-29', '7-9', '17-24', '16-25', '2-0', '1-9', {v:4,   f: '4W'}],
+                [14, 'Houston Rockets', 22, 60, 0.268, 31, '12-40', '4-12', '14-27', '8-33', '1-1', '4-6', {v:3,   f: '3W'}],
+                [15, 'San Antonio Spurs', 22, 60, 0.268, 31, '10-42', '3-13', '14-27', '8-33', '1-5', '3-7', {v:1,   f: '1W'}]
+            ]);
+            var table2 = new google.visualization.Table(document.getElementById('table_div2'));
+            table2.draw(data2, {showRowNumber: false, width: '100%', height: '100%',cssClassNames: cssClassNames,alternatingRowStyle: false});
+        }
+
+    </script>
+</head>
+
+
+
+<body>
+
+    <div id = "nav">
+        <div id = "logo">
+            <img src = "./image/nbalogo.png" width = 100px height = 100px>
+            <span id = "logo_name">로고 명</span>
+        </div>
+            
+        <div id = "menu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Team Info</a></li>
+                <li><a href="stat.html">Stat</a></li>
+                <li><a href="#">Schedule</a></li>
+                <li><a href="#">News</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content">
+        <div id="content_top" class="content"></div>
+            <h1>STATS</h1>
+            <p>Our homepage provides various statistics and figures of NBA teams and players. <br>
+            You can see various information through the tabs below, and it would be better not to stick to the numbers because they are fragmentary figures.</p>
+        </div>
+        <div id="content_nav" class="content">
+            <button id="defaultTab" class="subnav" onclick="showTab('LEAGUE_STANDINGS' , this)">LEAGUE STANDINGS</button>
+            <button class="subnav" onclick="showTab('PLAYER_RANKING', this)">PLAYER RANKING</button>
+            <button class="subnav" onclick="showTab('PLAYER_STATS', this)">PLAYER STATS</button>
+            <button class="subnav" onclick="showTab('PLAYER_COMPARISON', this)">PLAYER COMPARISON</button>
+        </div>
+        <div id="LEAGUE_STANDINGS" class="tab content">
+            <div id="buttonArea">
+                <button id="defaultButton" class="Tbutton" onclick="showTable('Eastern', this)">Eastern Conference</button>
+                <button class="Tbutton" onclick="showTable('Western', this)">Western Conference</button>
+            </div>
+            <div class="TB" id="Eastern">
+                <h2>Eastern Conference</h2>
+                <div id="table_div"></div>
+            </div>
+            <div class="TB" id="Western">
+                <h2>Western Conference</h1>
+                <div id="table_div2"></div>
+            </div>
+        </div>
+          
+        <div id="PLAYER_RANKING" class="tab content">
+            <!-- Tab 2 내용 -->
+            <h2>Tab 2 Content</h2>
+            <p>This is the content of Tab 2.</p>
+        </div>
+
+        <div id="PLAYER_STATS" class="tab content">
+            <!-- Tab 2 내용 -->
+            <h2>Tab 3 Content</h2>
+            <p>This is the content of Tab 3.</p>
+        </div>
+
+        <div id="PLAYER_COMPARISON" class="tab content">
+            <!-- Tab 2 내용 -->
+            <h2>Tab 4 Content</h2>
+            <div id="vsBox">
+                <div class="compare compbox"></div>
+                <h1 class="compare">VS</h1>
+                <div class="compare compbox"></div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class = "footer">
+        <div id = "foot_maker">
+            <p>
+                Software Web Programming Project Team Fireman <br>
+                CBNU Junior Kim Gang Min <br>
+                CBNU Junior Shin Seung Young <br>
+                CBNU Junior Lee Hyeon Do
+            </p>
+        </div>
+
+        <div id = "foot_sns">
+            <a href = "https://www.facebook.com/nba"><img src = "./image/facebook.png" class = "footer_img"></a>
+            <a href = "https://www.instagram.com/nba/?hl=en"><img src = "./image/insta.png" class = "footer_img"></a>
+            <a href = "https://twitter.com/NBA"><img src = "./image/twitter.png" class = "footer_img"></a>
+            <a href = "https://www.youtube.com/user/NBA"><img src = "./image/youtube.png" class = "footer_img"></a>
+            <a href = "https://www.tiktok.com/@nba"><img src = "./image/tiktok.png" class = "footer_img"></a>
+        </div>
+    </div>
+
+    <script> 
+        
+    </script>
+</body>
+</html>
