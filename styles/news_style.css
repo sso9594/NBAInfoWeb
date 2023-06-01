@@ -1,0 +1,41 @@
+.news_page {
+    background-color : lightgray;
+}
+
+.news {
+    padding-bottom : 25px;
+}
+
+.news_img {
+    display : block;
+    width : 400px;
+    height : 250px;
+    float : left;
+}
+
+.news_content {
+    height : 250px;
+    align-items : center;
+    justify-content : center;
+    display : flex;
+    flex-direction : column;
+    background-color : white;
+}
+
+.key_content {
+    display: none;
+}
+
+#overview {
+    display: none;
+    justify-content : center;
+    flex-direction : column;
+    align-items : center;
+    position: absolute;
+    background-color: lightgray;
+    padding: 10px;
+}
+
+#overview_content {
+    max-width: 60%;
+}

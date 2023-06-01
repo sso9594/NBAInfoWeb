@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="./styles/main_style.css">
+    <link rel="stylesheet" type="text/css" href="./styles/article_style.css" />
+
+    <script>
+        const parameter_number = new URLSearchParams(window.location.search);
+        const article_number = parameter_number.get('th');
+
+        function showArticle(num) {
+            var article1 = document.getElementById('article1');
+            var article2 = document.getElementById('article2');
+            var article3 = document.getElementById('article3');
+            var article4 = document.getElementById('article4');
+            var article5 = document.getElementById('article5');
+            var article6 = document.getElementById('article6');
+            var article7 = document.getElementById('article7');
+            var article8 = document.getElementById('article8');
+
+            switch(num) {
+                case '1': 
+                    article1.style.display = 'flex';
+                    article2.style.display = 'none';
+                    article3.style.display = 'none';
+                    article4.style.display = 'none';
+                    article5.style.display = 'none';
+                    article6.style.display = 'none';
+                    article7.style.display = 'none';
+                    article8.style.display = 'none';
+                    break;
+
+                case '2': 
+                    article1.style.display = 'none';
+                    article2.style.display = 'flex';
+                    article3.style.display = 'none';
+                    article4.style.display = 'none';
+                    article5.style.display = 'none';
+                    article6.style.display = 'none';
+                    article7.style.display = 'none';
+                    article8.style.display = 'none';
+                    break;
+
+                case '3': 
+                    article1.style.display = 'none';
+                    article2.style.display = 'none';
+                    article3.style.display = 'flex';
+                    article4.style.display = 'none';
+                    article5.style.display = 'none';
+                    article6.style.display = 'none';
+                    article7.style.display = 'none';
+                    article8.style.display = 'none';
+                    break;
+
+                case '4': 
+                    article1.style.display = 'none';
+                    article2.style.display = 'none';
+                    article3.style.display = 'none';
+                    article4.style.display = 'flex';
+                    article5.style.display = 'none';
+                    article6.style.display = 'none';
+                    article7.style.display = 'none';
+                    article8.style.display = 'none';
+                    break;
+
+                case '5': 
+                    article1.style.display = 'none';
+                    article2.style.display = 'none';
+                    article3.style.display = 'none';
+                    article4.style.display = 'none';
+                    article5.style.display = 'flex';
+                    article6.style.display = 'none';
+                    article7.style.display = 'none';
+                    article8.style.display = 'none';
+                    break;
+
+                case '6': 
+                    article1.style.display = 'none';
+                    article2.style.display = 'none';
+                    article3.style.display = 'none';
+                    article4.style.display = 'none';
+                    article5.style.display = 'none';
+                    article6.style.display = 'flex';
+                    article7.style.display = 'none';
+                    article8.style.display = 'none';
+                    break;
+
+                case '7': 
+                    article1.style.display = 'none';
+                    article2.style.display = 'none';
+                    article3.style.display = 'none';
+                    article4.style.display = 'none';
+                    article5.style.display = 'none';
+                    article6.style.display = 'none';
+                    article7.style.display = 'flex';
+                    article8.style.display = 'none';
+                    break;
+
+                case '8': 
+                    article1.style.display = 'none';
+                    article2.style.display = 'none';
+                    article3.style.display = 'none';
+                    article4.style.display = 'none';
+                    article5.style.display = 'none';
+                    article6.style.display = 'none';
+                    article7.style.display = 'none';
+                    article8.style.display = 'flex';
+                    break;
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', function() {
+            showArticle(article_number);
+        });
+    </script>
+</head>
+
+<body>
+    <div id = "nav">
+        <div id = "logo">
+            <img src = "./logo/logo_slogan_black_rem.png" width = 300px height = 200px>
+        </div>
+            
+        <div id = "menu">
+            <ul>
+                <li class = "menu_list"><a href="main.html">Home</a></li>
+                <li class = "menu_list"><a href="#TeamInfo">Team Info</a></li>
+                <li class = "menu_list"><a href="#Stat">Stat</a></li>
+                <li class = "menu_list"><a href="#Schedule">Schedule</a></li>
+                <li class = "menu_list"><a href="news.html">News</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="article_page" id = "article1">
+        <div class="article_title">
+            <p class="main_title">Miami advances to NBA finals seven times, Denver has an absolute advantage</h1>
+            <p class="sub_title">The Miami Heat defeated the Boston Celtics in Game 7 of the Eastern Conference Finals on the 30th to advance to the NBA Finals</p>
+            <p class="news_date">2023.05.31. PM 4:41</p>
+        </div>
+
+        <hr style="width:95%;">
+
+        <div class="article_content">
+            <div class="article_img">
+                <img src="https://imgnews.pstatic.net/image/468/2023/05/31/0000948464_001_20230531164102379.jpg?type=w647"/>
+            </div>
+
+            <div class="article_text">
+                <p class="key_point">
+                    The Boston Celtics were expected to win three consecutive games after three consecutive losses and make a historic record in Game 7 at home, but the NBA record dominated the Miami Heat as the winner.
+                    In 151 NBA playoffs history, no team has won four consecutive games after three losses. 
+                    Miami, in particular, repaid its revenge for losing to the Celtics in the Eastern Conference final last year with three wins and four losses. 
+                    This is the seventh time that they have advanced to the finals since 2006. 
+                    It is the highest number in the NBA during this period.
+                </p>
+
+                <p>
+                    Boston is a three-point shooting team. 
+                    When the success rate of three-point shots exceeded 40%, the winning rate was guaranteed with 49 wins and 2 losses over the past two seasons, but when it fell below, it was not half-strike with 29 wins and 33 losses. 
+                    The biggest reason why he failed to take advantage of the home court and was completely defeated by the Heat 103-84 was also due to the failure of a three-point shot. 
+                    He shot 42 three-point shots and had a 21% success rate with just nine.
+                    <br> <br>
+                    There were only four cases that led to Game 7 after losing three games in PO history, including this Boston.
+                    Boston is the first to extend the game to home after three consecutive Illimination games on the cliff. 
+                    In fact, Boston fans expected the Celtics to make a new history as the Red Sox of the same franchise made the myth of winning four consecutive games after the only three losses in the Major League in 2004. 
+                    However, the previous 150 failed records failed in front of the Celtics.
+                    <br> <br>
+                    The Denver Nuggets, who were confirmed to advance to the finals early as the Western Conference champion due to the bloody match between the Celtics and the Heat, are much more likely to win. 
+                    Some cautiously predict that the 2023 final may end with a short series.
+                    <br> <br>
+                    Denver is a perfect team for offense and defense. 
+                    It is ahead of Miami in under-goal, outside, bench, and defense. 
+                    Denver, which advanced to the final for the first time in the club's history, has high-sensitivity outer shots by center Nikola Yogic (28) and "Nuggetspan Stephon Curry" Jamal Murray (26). 
+                    Yogic has a triple-double record in 15 playoff games. 
+                    It is 27.8 points per game, 14.5 rebounds, and 11.8 assists.
+                    <br> <br>
+                    Moreover, power is superior even under equal conditions, but Miami has consumed a lot of physical strength in Game 7, so it is advantageous. 
+                    Miami last won the Denver away game in the 2016-2017 regular season. 
+                    At this time, Yogic and Murray did not play side by side. 
+                    Miami also reached the final with the lowest score (109.5 points) in the regular season. 
+                    Miami is the third team to advance to the finals of the lowest scoring team in the regular season.
+                    <br> <br>
+                    Miami, which has won three NBA titles in its career, is the second team to advance to the NBA Finals as the eighth seed after being seeded in the playoffs in 1984. 
+                    The New York Knicks were the first team in 1999. 
+                    The Eastern Conference Knicks advanced to the final, beating the Miami Heat, Atlanta Hawks, and Indiana Pacers one after another. 
+                    At this time, the first round of the conference was the best-of-five series. 
+                    However, they lost to the San Antonio Spurs of David Robinson, Tim Duncan, Sean Elliot and Steve Kerr (now Golden State Warriors) 4-1 in the final. 
+                    History is likely to repeat itself again this time.
+                    <br> <br>
+                    The 2023 NBA Finals will begin on June 2. The format is 2-2-1-1-1.
+                    Denver, which has a high winning rate in the regular season, is home.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="article_page" id = "article2">
+        <div class="article_title">
+            <p class="main_title">"11% predicted final victory" Miami will win only after the hellish Denver expedition</h1>
+            <p class="sub_title">Miami challenges upset once again.</p>
+            <p class="news_date">2023.06.01. AM 6:01</p>
+        </div>
+
+        <hr style="width:95%;">
+
+        <div class="article_content">
+            <div class="article_img">
+                <img src="https://imgnews.pstatic.net/image/398/2023/06/01/0000069039_001_20230601060101344.jpg?type=w647"/>
+            </div>
+
+            <div class="article_text">
+                <p class="key_point">
+                    The Miami Heat and Denver Nuggets will play Game 1 of the 2023 NBA Finals on June 2 at the Denver Bowl Arena.
+                </p>
+
+                <p>
+                    Miami, the eighth seed of the Eastern Conference, decorated all three series that reached the final with upsets despite various unfavorable factors. 
+                    No. 1 seed Milwaukee, No. 5 seed New York and No. 2 seed Boston all failed to stop Miami. 
+                    They are the second eighth-seeded team in NBA history to reach the final.
+                    <br> <br>
+                    Miami has continued to win, breaking expectations that it is unfavorable, but its final opponent is also formidable. 
+                    Denver advanced to the final for the first time in its foundation by sweeping the Western Conference Final. 
+                    Nikola Jokic, a former back-to-back MVP, is the center of the team and the overall lineup balance is quite good.
+                    <br> <br>
+                    Just as the first seed in the west meets the eighth seed in the east, experts and fans' expectations for the final are also one-sided. 
+                    Analysts at ESPN drew attention by predicting the series, predicting Miami's 11% chance of winning the final and Denver's 89%.
+                    <br> <br>
+                    For absolute Underdog Miami, it is very important not to give up the lead at the beginning of the series. 
+                    To do so, we have to overcome the Denver expedition, which is called the best hell in the league.
+                    <br> <br>
+                    Denver's home stadium, Ball Arena, based in the alpine region, is close to the graves of visiting teams. 
+                    Denver, which has traditionally been strong at home, has been much stronger at home with 34 wins and 7 losses at home and 19 wins and 22 losses at away games this season. 
+                    He also captured all eight home games in the playoffs.
+                    <br> <br>
+                    Of course, it is not an easy situation for Miami when various conditions are combined. 
+                    While Denver finished the conference final early and went on a break, Miami had a bloody battle with Boston until Game 7, so there is a lot of physical burden. 
+                    There are far more evaluations that Denver is ahead in objective power.
+                    <br> <br>
+                    However, Miami has an upper hand over Denver in terms of maintaining a sense of practice. 
+                    Denver coach Mike Malone also expressed concern about his sense of practice.
+                    <br> <br>
+                    If Miami achieves more than one win in the away game, it will be difficult for Denver, which clearly has a difference between home and away games. 
+                    Whether Miami collapses due to Denver's overwhelming home performance is likely to determine the victory or defeat of the series.
+                    <br> <br>
+                    "I don't know," Miami ace Jimmy Butler said in an interview after the conference final when asked about the key point of his victory over Denver. 
+                    But we have two days to figure it out before the start of the first game," he said. Will Butler and Miami find the answer to victory?
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="article_page" id = "article3">
+        <div class="article_title">
+            <p class="main_title">Nikola Jokic, who achieved everything as a player, will even hold the champion trophy in his arms</h1>
+            <p class="sub_title">"Serbian basketball genius" Nikola Jokic (28) played in the Serbian league and challenged the world's best stage by participating in the 2014 NBA Rookie Draft.</p>
+            <p class="news_date">2023.06.01. PM 12:34</p>
+        </div>
+
+        <hr style="width:95%;">
+
+        <div class="article_content">
+            <div class="article_img">
+                <img src="https://imgnews.pstatic.net/image/022/2023/06/01/20230601509401_20230601141301770.jpg?type=w647"/>
+            </div>
+
+            <div class="article_text">
+                <p class="key_point">
+                    Yokichi, who grew up with an unusual play style of a center who is good at passing, won the first regular league player in his life with a monster performance of 26.4 points, 10.8 rebounds, and 8.3 assists in the 2020-2021 season
+                </p>
+
+                <p>
+                    The following year, he won his second consecutive MVP title with 27.1 points, 13.8 rebounds, and 7.9 assists.
+                    Yokichi, who also set a triple double-weight record this season, failed to win three consecutive MVP titles due to public opinion not to give an MVP to a player for three consecutive years, but no one disagrees that Yokichi is the best center in the NBA.
+                    <br> <br>
+                    Yokichi, who has achieved everything he can achieve as an individual player, will now challenge to win the championship, the last remaining high point. 
+                    Denver, led by Jokic, will face the Miami Heat in the first leg of the 2022-2023 championship game (four wins out of seven) at Denver Ball Arena, Colorado, its home stadium, on the 2nd.
+                    <br> <br>
+                    Denver is the first champion in the team's history, but Denver is much more advantageous in terms of objective situations. 
+                    Denver, who started the playoffs as the No. 1 seed in the Western Conference, came up to the conference finals with a four-game win over the Los Angeles Lakers led by LeBron James. 
+                    On the other hand, he had to fight Boston for Game 7 in the Eastern Conference finals. 
+                    Miami, the eighth seed of the Eastern Conference, is clearly inferior in physical strength to Denver, which has come up after 20 games from the play-in tournament to the championship game.
+                    <br> <br>
+                    Jokic, who played an average of 33.7 minutes in the regular league with 24.5 points, 11.8 rebounds, and 9.8 assists, played 38.9 minutes in the playoffs, raising the gear further with 29.9 points, 13.3 rebounds and 10.3 assists. 
+                    Miami's main center, Bam Adebayo, who will be the opponent of Jokic, is a 206cm tall under-sized big man, so it is not easy to stop Jokic, a giant of 211cm and 129kg.
+                    <br> <br>
+                    Even if Jokic does not score, his ability to assemble offense to help his teammates score is by far the best center in history. 
+                    Point guard Jamal Murray and small forward Michael Porter Jr., who help Jokic, are also at their peak, making Denver an advantageous championship in many ways. 
+                    Attention is focusing on whether Jokic will be able to compensate for his failure to win three consecutive MVP titles with a bigger gift of winning the championship.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="article_page" id = "article4">
+        <div class="article_title">
+            <p class="main_title">Bob Myers, the head of the 'Golden State Dynasty,' voluntarily resigns</h1>
+            <p class="sub_title">Bob Myers, the main character who created the Golden State dynasty, resigned.</p>
+            <p class="news_date">2023.05.31. PM 2:02</p>
+        </div>
+
+        <hr style="width:95%;">
+
+        <div class="article_content">
+            <div class="article_img">
+                <img src="https://imgnews.pstatic.net/image/065/2023/05/31/0000247359_001_20230531140205058.jpg?type=w647"/>
+            </div>
+
+            <div class="article_text">
+                <p class="key_point">
+                    Myers announced his intention to resign from his position at a press conference to wrap up the Golden State Warriors season on the 31st. 
+                    As a result, Golden State has to appoint a new general manager.
+                </p>
+
+                <p>
+                    "It's a tough, tough decision," said Myers. 
+                    "It's time to resign," he said.
+                    <br> <br>
+                    The reason for Myers' resignation was found to be that he wanted a break. 
+                    The Golden State club promised Myers the best treatment in the industry, but they could not catch Myers.
+                    <br> <br>
+                    Myers is no exaggeration to say that he created the Golden State dynasty. 
+                    Myers joined the organization in April 2011 as deputy head of Golden State and was promoted to general manager in April 2012.
+                    <br> <br>
+                    Myers, who was promoted to general manager, laid the foundation by nominating Harrison Barnes and Dramond Green in the 2012 NBA Draft and appointed Steve Kerr in 2014, signaling his departure from the Golden State dynasty.
+                    <br> <br>
+                    Since then, Myers and Golden State have collaborated on four championships to form the Golden State dynasty and become the most popular team in the NBA.
+                    <br> <br>
+                    Myers' departure, one of the best NBA leaders, is fatal to Golden State. 
+                    Golden State, which is showing signs of change after being eliminated in the second round of the playoffs this season, is in a situation where it has to appoint a new general manager.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="article_page" id = "article5">
+        <div class="article_title">
+            <p class="main_title">17 wins in total, a famous team that doesn't reach the current generation</h1>
+            <p class="sub_title">The Boston Celtics, along with the Los Angeles Lakers, are the NBA Finals winners in the NBA Finals.</p>
+            <p class="news_date">2023.05.31. AM 8:01</p>
+        </div>
+
+        <hr style="width:95%;">
+
+        <div class="article_content">
+            <div class="article_img">
+                <img src="https://imgnews.pstatic.net/image/065/2023/05/31/0000247348_001_20230531080101139.jpg?type=w647"/>
+            </div>
+
+            <div class="article_text">
+                <p class="key_point">
+                    Starting in 1957, he won 17 championships until 2008, and also has the most conference wins (10) and division wins (33). 
+                    Of course, the word "the prestigious tradition" is inevitable. 
+                    However, the image of Boston as a "team that has won many championships" cannot be easily recalled to the younger generation recently.
+                </p>
+
+                <p>
+                    The NBA sensation began to hit Korea in the 1990s during the Chicago Bulls Dynasty. 
+                    Boston was actually in its darkest days at this time. 
+                    There was a time when it was competitive, but it was far from winning the championship. 
+                    Since then, popularity has slowed down as Michael Jordan and his contemporary rivals have retired one by one, but when Stephen Curry's Golden State Warriors emerged, attention has gathered again. 
+                    Tim Duncan's San Antonio Spurs were also steady. Therefore, Chicago, Golden State, and San Antonio will be the first to come to mind if many NBA fans win the championship.
+                    <br> <br>
+                    The Lakers, a career rival, are different. 
+                    He did well in the past, but he added six final wins in the 21st century. 
+                    In addition to the achievement of three consecutive losses with Shaquille O'Neill and the late Kobe Bryant's one-two punches, the late Kobe Bryant and Pau Gasol have since created two more wins. 
+                    Most recently, three years ago, LeBron James and Anthony Davis collaborated on one championship.
+                    <br> <br>
+                    Boston, on the other hand, has won many championships in terms of career, but has only added one championship in the 2000s, including being concentrated at a certain time. 
+                    It has been quiet for more than a decade, but recently, it has been rebuilding its famous price with Jason Tatum (25, 203cm) and Jeilan Brown (27, 198cm) combined as an airlift and swingman. 
+                    Despite being considered a favorite to win, he suffered in the final and conference finals last season and this season, respectively.
+                    <br> <br>
+                    Since then, Boston's efforts to win the championship have continued. 
+                    He constantly tried to strengthen his power by recruiting star-class players such as Kyrie Irving, but it did not work out unexpectedly. 
+                    In the end, outside recruitment is important, but there is a consensus that franchise stars are needed as they did in the past when Russell, Halflichek, and Bird were selected as the third-place in the first round of the 2016 draft and Tatum as the third-place in the first round of the 2017 draft.
+                    <br> <br>
+                    After signing Brown, Boston continues to be a strong team. 
+                    During the period, it will solidify its position as a strong team in the East, including five advancements to the conference finals and one runner-up to the finals. 
+                    At this point, Boston has become an indispensable name when it comes to selecting candidates for the East. 
+                    The problem is that there is no final victory, which is the final finish.
+                    <br> <br>
+                    Last season, he failed to cross the Golden State wall in the final and this season, he bowed his head after a neck-and-neck race with the Miami Heat, who came up to the eighth seed in the conference final. 
+                    Considering that Boston had a strong team color in big games in its heyday, it is regrettable. 
+                    As a team with strong shooting skills, it is scary once it explodes, but in the opposite case, it cools down, and overall ups and downs are severe.
+                    <br> <br>
+                    Therefore, it is analyzed that there were many long-term matches from the 6th to 7th games in the playoffs, and the resulting physical strength consumption also affected. 
+                    Any team will have a hard time if it gets caught in a mud fight in Boston, but in the process, it will be hard for themselves. 
+                    This is why some say that in order to win the presidency, changes should be made to the current lineup.
+                    <br> <br>
+                    For Boston, Tatum and Brown's one-two punches are in good shape and good members such as Derek White, Marcus Smart, Al Horford, Malcolm Brogdon and Sam Hauser should play together. 
+                    This is because there is no guarantee that the current power will be maintained in the future. 
+                    Fans are waiting for the day to see when Boston, a famous family, will be able to shake off its image as a classic family and stand tall as a strong team of the current generation.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="article_page" id = "article6">
+        <div class="article_title">
+            <p class="main_title">LeBron James, a 'retirement hint', will play again next season.</h1>
+            <p class="sub_title">Local media "LeBron returns next season. LAL PG Problem Solving Urgent"</p>
+            <p class="news_date">2023.05.30. PM 5:00</p>
+        </div>
+
+        <hr style="width:95%;">
+
+        <div class="article_content">
+            <div class="article_img">
+                <img src="https://imgnews.pstatic.net/image/076/2023/05/30/2023053001002313200294891_20230530170005323.jpg?type=w647"/>
+            </div>
+
+            <div class="article_text">
+                <p class="key_point">
+                    LeBron James can be seen next season as well.
+                    ESPN and CBS Sports in the U.S. said on the 30th that a source close to LeBron James is very likely to return next season. 
+                    I believe I will return to the 2023-2024 season,' he reported.
+                </p>
+
+                <p>
+                    The Los Angeles Lakers have struggled in the playoffs this season. 
+                    However, it ran into the limit of objective power. 
+                    He advanced to the Western Final by beating his archrival Golden State. 
+                    However, he lost all four games to the Denver Nuggets in the Western Conference Finals (best-of-seven series). 
+                    It was an inexcusable defeat. After the Western Final Series, LeBron James said something meaningful. 
+                    In an interview with local media, he said, "A lot to think about."
+                    <br> <br>
+                    It was a question of next year's plans. 
+                    He said, 'I don't know. I really don't know. 
+                    To be honest, I have a lot to think about,' he said. 
+                    At that time, local media all said, "It was a meaningful remark enough to suggest retirement." 
+                    There was a reason. It was a complete loss to Denver. 
+                    The Los Angeles Lakers had one-two punches from Anthony Davis and LeBron James, and DeAngelo Russell and Austin Reeves. 
+                    Organizational power was better as the game was played. 
+                    But Denver was a huge wall. 
+                    LeBron's dominance in the match, which came down from his heyday, has fallen. 
+                    His poor activity became an issue throughout his time on the court.
+                    <br> <br>
+                    One of the recent NBA trends is game speed, or transition. 
+                    Teams with weak transitions receive invisible negative points in the airlift margin, resulting in poor airlift efficiency.
+                    <br> <br>
+                    In other words, Denver was ahead of the Los Angeles Lakers in both swift attack and early offense as well as set offense, and eventually won a complete victory. 
+                    After the game, LeBron James is likely to have felt frustrated that he had never felt before. 
+                    In addition, it was a series that proved that the LA Lakers could not challenge the winning ring with only a good role player for LeBron and Anthony's core. 
+                    In other words, it is highly likely that the team system in which LeBron exists as a core has a low probability of winning.
+                    <br> <br>
+                    In the end, LeBron expressed his too complicated mind by saying that he needed a lot of thought.
+                    <br> <br>
+                    LeBron James played in 55 regular league games this year. 
+                    I've had a hard time this season on my feet. 
+                    He showed an ace in the playoffs, but struggled as he lost his activity in defense and transition.
+                    <br> <br>
+                    However, LeBron is expected to challenge again.
+                    <br> <br>
+                    Local media said, 'The LA Lakers will face many problems off-season. 
+                    In particular, the point guard problem is a homework that must be solved,' he said.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="article_page" id = "article7">
+        <div class="article_title">
+            <p class="main_title">'The highest ever' coach Williams signed a six-year, $72 million mega-contract with DET</h1>
+            <p class="sub_title">Monty Williams takes over as head of Detroit.</p>
+            <p class="news_date">2023.06.01. AM 11:07</p>
+        </div>
+
+        <hr style="width:95%;">
+
+        <div class="article_content">
+            <div class="article_img">
+                <img src="https://imgnews.pstatic.net/image/065/2023/06/01/0000247394_001_20230601110701123.jpg?type=w647"/>
+            </div>
+
+            <div class="article_text">
+                <p class="key_point">
+                    The Athletic said on the 1st that Monty Williams will be appointed as the team's new manager after signing a six-year, $72 million mega-contract with the Detroit Pistons.
+                </p>
+
+                <p>
+                    A six-year contract period, $72 million. 
+                    All of them are the highest ever.
+                    <br> <br>
+                    Williams led the Phoenix Suns, who had been weak, to a strong western team. 
+                    He led the team to the final but did not reach the championship. 
+                    He was dismissed from the team because of poor performance this season.
+                    <br> <br>
+                    Detroit, which is at the bottom of the East, has appointed Williams as its head coach to transplant Phoenix's success model. 
+                    It is a very large contract.
+                    <br> <br>
+                    Detroit is full of promising players such as Cade Cunningham, Jaylen Durren, and Jayden Ivy. 
+                    I wonder if Detroit's rebuilding will be successful just as Williams led Phoenix Rebuilding.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="article_page" id = "article8">
+        <div class="article_title">
+            <p class="main_title">Miami's fate is on Butler as 'three consecutive wins followed by three consecutive losses'</h1>
+            <p class="sub_title">Miami's flame is dying out. In the end, it's the ace's turn to cheer up once again.</p>
+            <p class="news_date">2023.05.29. AM 6:01</p>
+        </div>
+
+        <hr style="width:95%;">
+
+        <div class="article_content">
+            <div class="article_img">
+                <img src="https://imgnews.pstatic.net/image/398/2023/05/29/0000068990_001_20230529060101392.jpg?type=w647"/>
+            </div>
+
+            <div class="article_text">
+                <p class="key_point">
+                    The Miami Heat lost 103-104 in Game 6 of the Eastern Conference Finals against the Boston Celtics in the 2023 NBA Playoffs at the Caseya Center in Miami on the 28th.
+                </p>
+
+                <p>
+                    Until Jimmy Butler scored all three free throws from his opponent's fouls 3.0 seconds before the end of the fourth quarter to turn the game around 103-102, the goddess of victory seemed to be in Miami's favor.
+                    <br> <br>
+                    But the brutal fate was not on Miami's side. 
+                    In Boston's last chance to attack, Derek White turned the game around again with a dramatic foot-back score, and Miami missed the chance to advance to the final on its opponent's buzzer beater.
+                    <br> <br>
+                    Miami is the team that is writing the most amazing story of the playoffs. 
+                    After struggling through the play-in tournament and advancing to the playoffs as the eighth seed, Tyler Hiro and Victor Oladipo passed the first round by defeating first seed Milwaukee 4-1 despite unfavorable factors such as injury and created an upset in the second round against New York.
+                    <br> <br>
+                    Miami's momentum was not easily dampened in the conference final against Boston. 
+                    Miami, which won both the first two games of the series on the road and won the third game at home by 26 points, has won three consecutive games in the series, increasing its chances of advancing to the NBA Finals.
+                    <br> <br>
+                    However, Miami's flow began to get twisted from Game 4. 
+                    It was painful that the balance of the rotation gradually collapsed as the condition of assistants such as Kyle Lowry, Gabe Vincent, and Max Struss began to falter. 
+                    Caleb Martin's hard work, one of the best discoveries in the playoffs, also failed to lead to the final, leading to three consecutive wins and three consecutive losses.
+                    <br> <br>
+                    In the end, Miami's fate depends on Butler, who is showing a tremendous presence in offense and defense with an average of 28.5 points, 7.0 rebounds, 5.7 assists and 2.0 steals in 16 playoff games.
+                    <br> <br>
+                    Butler scored 24 points, 11 rebounds, and 8 assists in Game 6, but his field goal success rate was only 23.8% (5/23). 
+                    Even though he overcame his slump until the third quarter and scored 15 points in the fourth quarter alone, he could not avoid the blame because the team lost in the end.
+                    <br> <br>
+                    Butler said in an interview after the game, "I told my teammates in the locker room that today's defeat was because of me. 
+                    He vowed to do better in Game 7. "I will definitely win Game 7 in Boston," he said.
+                    <br> <br>
+                    If he wins, he will be the first team to advance to the NBA Finals through the play-in tournament. 
+                    If lost, it would become the first team in NBA history to fail to keep a series 3-0 lead in the playoffs. 
+                    The fate of Miami and Butler, who are at a crossroads, will be decided in Boston on the 30th.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class = "footer">
+        <div id = "foot_maker">
+            <p>
+                Software Web Programming Project Team Fireman <br>
+                CBNU Junior Kim Gang Min <br>
+                CBNU Junior Shin Seung Young <br>
+                CBNU Junior Lee Hyeon Do
+            </p>
+        </div>
+
+        <div id = "foot_sns">
+            <a href = "https://www.facebook.com/nba"><img src = "./footer/facebook.png" class = "footer_img"></a>
+            <a href = "https://www.instagram.com/nba/?hl=en"><img src = "./footer/insta.png" class = "footer_img"></a>
+            <a href = "https://twitter.com/NBA"><img src = "./footer/twitter.png" class = "footer_img"></a>
+            <a href = "https://www.youtube.com/user/NBA"><img src = "./footer/youtube.png" class = "footer_img"></a>
+            <a href = "https://www.tiktok.com/@nba"><img src = "./footer/tiktok.png" class = "footer_img"></a>
+        </div>
+    </div>
+</body>
+</html>

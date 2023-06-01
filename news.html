@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <link rel="stylesheet" type="text/css" href="./styles/main_style.css">
+    <link rel="stylesheet" type="text/css" href="./styles/news_style.css">
+
+    <script>
+        function show_overview(div) {
+            var overview = document.getElementById("overview");
+
+            var h1_text = div.querySelector("h1").textContent;
+            var p_text = div.querySelector("p").textContent;
+            var news_image = div.parentNode.querySelector(".news_img img").src;
+            var key_content = div.parentNode.querySelector(".key_content").textContent;
+
+            var overview_title = overview.querySelector("#overview_title");
+            var overview_subtitle = overview.querySelector("#overview_subtitle");
+            var overview_img = overview.querySelector("#overview_img");
+            var overview_content = overview.querySelector("#overview_content");
+
+            if (overview.style.display === "none") {
+                overview.style.display = "flex";
+                overview_title.textContent = h1_text;
+                overview_subtitle.textContent = p_text;
+                overview_img.src = news_image;
+                overview_content.textContent = key_content;
+
+                var newsDiv = div.parentNode;
+                var newsDivRect = newsDiv.getBoundingClientRect();
+                var newsDivTop = newsDivRect.top + window.pageYOffset;
+                var newsDivLeft = newsDivRect.left + window.pageXOffset;
+                var newsDivWidth = newsDivRect.width;
+
+                overview.style.top = newsDivTop + newsDiv.offsetHeight + "px";
+                overview.style.left = newsDivLeft + "px";
+                overview.style.width = newsDivWidth + "px";
+            } 
+            
+            else {
+                overview.style.display = "none";
+            }
+        }
+
+        function goArticle(th) {
+            window.location.href = `articles.html?th=${th}`;
+        }
+    </script>
+</head>
+
+<body>
+    <div id = "nav">
+        <div id = "logo">
+            <img src = "./logo/logo_slogan_black_rem.png" width = 300px height = 200px>
+        </div>
+            
+        <div id = "menu">
+            <ul>
+                <li class = "menu_list"><a href="main.html">Home</a></li>
+                <li class = "menu_list"><a href="#TeamInfo">Team Info</a></li>
+                <li class = "menu_list"><a href="#Stat">Stat</a></li>
+                <li class = "menu_list"><a href="#Schedule">Schedule</a></li>
+                <li class = "menu_list"><a href="news.html">News</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>Latest News</h2>
+
+    <hr> <br>
+
+    <div class= "news_page">
+        <div id="overview">
+            <h2 id="overview_title"></h2>
+            <p id="overview_subtitle"></p>
+            <img id="overview_img" width="750px" height="500px">
+            <p id="overview_content"></p>
+        </div>
+
+        <div class="news">  <!-- https://sports.news.naver.com/news?oid=468&aid=0000948464 -->
+            <div>
+                <div class="news_img" onclick="goArticle(1)">
+                    <img src="https://imgnews.pstatic.net/image/468/2023/05/31/0000948464_001_20230531164102379.jpg?type=w647" class="news_img">
+                </div>
+
+                <div class="news_content" onclick="show_overview(this)">
+                    <h1>Miami advances to NBA finals seven times, Denver has an absolute advantage</h1>
+                    <p>The Miami Heat defeated the Boston Celtics in Game 7 of the Eastern Conference Finals on the 30th to advance to the NBA Finals</p> <br><br><br>
+                    <p class="key_content">
+                        The Boston Celtics were expected to win three consecutive games after three consecutive losses and make a historic record in Game 7 at home, but the NBA record dominated the Miami Heat as the winner.
+                        In 151 NBA playoffs history, no team has won four consecutive games after three losses. 
+                        Miami, in particular, repaid its revenge for losing to the Celtics in the Eastern Conference final last year with three wins and four losses. 
+                        This is the seventh time that they have advanced to the finals since 2006. 
+                        It is the highest number in the NBA during this period.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="news">  <!-- https://sports.news.naver.com/news?oid=398&aid=0000069039 -->
+            <div>
+                <div class="news_img" onclick="goArticle(2)">
+                    <img src="https://imgnews.pstatic.net/image/398/2023/06/01/0000069039_001_20230601060101344.jpg?type=w647" class="news_img">
+                </div>
+
+                <div class="news_content" onclick="show_overview(this)">
+                    <h1>"11% predicted final victory" Miami will win only after the hellish Denver expedition</h1>
+                    <p>Miami challenges upset once again.</p> <br><br><br>
+                    <p class="key_content">
+                        The Miami Heat and Denver Nuggets will play Game 1 of the 2023 NBA Finals on June 2 at the Denver Bowl Arena.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="news">  <!-- https://sports.news.naver.com/news?oid=022&aid=0003818681 -->
+            <div>
+                <div class="news_img" onclick="goArticle(3)">
+                    <img src="https://imgnews.pstatic.net/image/022/2023/06/01/20230601509401_20230601141301770.jpg?type=w647" class="news_img">
+                </div>
+
+                <div class="news_content" onclick="show_overview(this)">
+                    <h1>Nikola Jokic, who achieved everything as a player, will even hold the champion trophy in his arms</h1>
+                    <p>"Serbian basketball genius" Nikola Jokic (28) played in the Serbian league and challenged the world's best stage by participating in the 2014 NBA Rookie Draft.</p> <br><br><br>
+                    <p class="key_content">
+                        Yokichi, who grew up with an unusual play style of a center who is good at passing, won the first regular league player in his life with a monster performance of 26.4 points, 10.8 rebounds, and 8.3 assists in the 2020-2021 season
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="news">  <!-- https://sports.news.naver.com/news?oid=065&aid=0000247359 -->
+            <div>
+                <div class="news_img" onclick="goArticle(4)">
+                    <img src="https://imgnews.pstatic.net/image/065/2023/05/31/0000247359_001_20230531140205058.jpg?type=w647" class="news_img">
+                </div>
+
+                <div class="news_content" onclick="show_overview(this)">
+                    <h1>Bob Myers, the head of the 'Golden State Dynasty,' voluntarily resigns</h1>
+                    <p>Bob Myers, the main character who created the Golden State dynasty, resigned.</p> <br><br><br>
+                    <p class="key_content">
+                        Myers announced his intention to resign from his position at a press conference to wrap up the Golden State Warriors season on the 31st. 
+                        As a result, Golden State has to appoint a new general manager.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="news">  <!-- https://sports.news.naver.com/news?oid=065&aid=0000247348 -->
+            <div>
+                <div class="news_img" onclick="goArticle(5)">
+                    <img src="https://imgnews.pstatic.net/image/065/2023/05/31/0000247348_001_20230531080101139.jpg?type=w647" class="news_img">
+                </div>
+
+                <div class="news_content" onclick="show_overview(this)">
+                    <h1>17 wins in total, a famous team that doesn't reach the current generation</h1>
+                    <p>The Boston Celtics, along with the Los Angeles Lakers, are the NBA Finals winners in the NBA Finals.</p> <br><br><br>
+                    <p class="key_content">
+                        Starting in 1957, he won 17 championships until 2008, and also has the most conference wins (10) and division wins (33). 
+                        Of course, the word "the prestigious tradition" is inevitable. 
+                        However, the image of Boston as a "team that has won many championships" cannot be easily recalled to the younger generation recently.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="news">  <!-- https://sports.news.naver.com/news?oid=076&aid=0004013315 -->
+            <div>
+                <div class="news_img" onclick="goArticle(6)">
+                    <img src="https://imgnews.pstatic.net/image/076/2023/05/30/2023053001002313200294891_20230530170005323.jpg?type=w647" class="news_img">
+                </div>
+
+                <div class="news_content" onclick="show_overview(this)">
+                    <h1>LeBron James, a 'retirement hint', will play again next season.</h1>
+                    <p>Local media "LeBron returns next season. LAL PG Problem Solving Urgent"</p> <br><br><br>
+                    <p class="key_content">
+                        LeBron James can be seen next season as well.
+                        ESPN and CBS Sports in the U.S. said on the 30th that a source close to LeBron James is very likely to return next season. 
+                        I believe I will return to the 2023-2024 season,' he reported.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="news">  <!-- https://sports.news.naver.com/news?oid=065&aid=0000247394 -->
+            <div>
+                <div class="news_img" onclick="goArticle(7)">
+                    <img src="https://imgnews.pstatic.net/image/065/2023/06/01/0000247394_001_20230601110701123.jpg?type=w647" class="news_img">
+                </div>
+
+                <div class="news_content" onclick="show_overview(this)">
+                    <h1>'The highest ever' coach Williams signed a six-year, $72 million mega-contract with DET</h1>
+                    <p>Monty Williams takes over as head of Detroit.</p> <br><br><br>
+                    <p class="key_content">
+                        The Athletic said on the 1st that Monty Williams will be appointed as the team's new manager after signing a six-year, $72 million mega-contract with the Detroit Pistons.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="news">  <!-- https://sports.news.naver.com/news?oid=398&aid=0000068990 -->
+            <div>
+                <div class="news_img" onclick="goArticle(8)">
+                    <img src="https://imgnews.pstatic.net/image/398/2023/05/29/0000068990_001_20230529060101392.jpg?type=w647" class="news_img">
+                </div>
+
+                <div class="news_content" onclick="show_overview(this)">
+                    <h1>Miami's fate is on Butler as 'three consecutive wins followed by three consecutive losses'</h1>
+                    <p>Miami's flame is dying out. In the end, it's the ace's turn to cheer up once again.</p> <br><br><br>
+                    <p class="key_content">
+                        The Miami Heat lost 103-104 in Game 6 of the Eastern Conference Finals against the Boston Celtics in the 2023 NBA Playoffs at the Caseya Center in Miami on the 28th.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class = "footer">
+        <div id = "foot_maker">
+            <p>
+                Software Web Programming Project Team Fireman <br>
+                CBNU Junior Kim Gang Min <br>
+                CBNU Junior Shin Seung Young <br>
+                CBNU Junior Lee Hyeon Do
+            </p>
+        </div>
+
+        <div id = "foot_sns">
+            <a href = "https://www.facebook.com/nba"><img src = "./footer/facebook.png" class = "footer_img"></a>
+            <a href = "https://www.instagram.com/nba/?hl=en"><img src = "./footer/insta.png" class = "footer_img"></a>
+            <a href = "https://twitter.com/NBA"><img src = "./footer/twitter.png" class = "footer_img"></a>
+            <a href = "https://www.youtube.com/user/NBA"><img src = "./footer/youtube.png" class = "footer_img"></a>
+            <a href = "https://www.tiktok.com/@nba"><img src = "./footer/tiktok.png" class = "footer_img"></a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+body {
+    background-color: lightgray;
+}
+
+.article_page {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.main_title {
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.sub_title {
+    font-size: 18px;
+}
+
+.news_date {
+    float: right;
+    margin: 0;
+    color: lightgray;
+}
+
+.article_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.article_img {
+    padding-top: 20px;
+}
+
+.article_text {
+    width: 80%;
+    font-size: 20px;
+}
