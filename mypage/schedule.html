@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>경기 일정</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 10px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        .game {
+            box-sizing: border-box;
+            width: 50%;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            /* display: flex;
+      justify-content: center;  // 이거 중앙 정렬*/
+        }
+
+        .team-logo {
+            width: 50px;
+            height: 50px;
+        }
+
+        .details {
+            display: block;
+            /* 모든 일정의 세부 정보를 기본적으로 보여줌 */
+        }
+
+        .date-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .date-navigation button {
+            font-size: 16px;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="date-navigation container">
+        <button id="prev-date">이전</button>
+        <div id="date-display"></div>
+        <button id="next-date">다음</button>
+    </div>
+    <p>2022/23시즌 일정/결과</p>
+    <!-- 여기부터 -->
+    <div class="container">
+        <a href="#" class="game">
+            <img src="team1_logo.png" alt="Team 1" class="team-logo">
+            vs
+            <img src="team2_logo.png" alt="Team 2" class="team-logo">
+            <div class="details">
+                <p>날짜: 2023년 5월 20일</p>
+                <p>시간: 오후 3시</p>
+                <p>장소: 스타디움</p>
+            </div>
+        </a>
+        <a href="#" class="game">
+            <img src="team1_logo.png" alt="Team 1" class="team-logo">
+            vs
+            <img src="team2_logo.png" alt="Team 2" class="team-logo">
+            <div class="details">
+                <p>날짜: 2023년 5월 20일</p>
+                <p>시간: 오후 3시</p>
+                <p>장소: 스타디움</p>
+            </div>
+        </a>
+        <a href="#" class="game">
+            <img src="team1_logo.png" alt="Team 1" class="team-logo">
+            vs
+            <img src="team2_logo.png" alt="Team 2" class="team-logo">
+            <div class="details">
+                <p>날짜: 2023년 5월 20일</p>
+                <p>시간: 오후 3시</p>
+                <p>장소: 스타디움</p>
+            </div>
+        </a>
+        <a href="#" class="game">
+            <img src="team1_logo.png" alt="Team 1" class="team-logo">
+            vs
+            <img src="team2_logo.png" alt="Team 2" class="team-logo">
+            <div class="details">
+                <p>날짜: 2023년 5월 20일</p>
+                <p>시간: 오후 3시</p>
+                <p>장소: 스타디움</p>
+            </div>
+        </a>
+    </div>
+
+    <!-- 여기까지 -->
+
+    <div class="container">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>날짜</th>
+                    <th>경기</th>
+                    <th>시간 장소</th>
+                    <th>경기 내용</th>
+                </tr>
+            </thead>
+            <tbody id="schedule-body">
+                <!-- 일정 내용이 여기에 동적으로 추가될 것입니다 -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        const dateDisplay = document.getElementById('date-display');
+        const prevDateBtn = document.getElementById('prev-date');
+        const nextDateBtn = document.getElementById('next-date');
+        const scheduleBody = document.getElementById('schedule-body');
+
+        const currentDate = new Date(); // 현재 날짜를 가져옵니다.
+        const startDate = new Date(currentDate.getFullYear(), 4, 1); // 5월 1일
+        const endDate = new Date(currentDate.getFullYear(), 4, 30); // 5월 30일
+
+        let currentDateIndex = Math.floor((currentDate - startDate) / (24 * 60 * 60 * 1000)); // 현재 날짜의 인덱스
+
+        function generateSchedule() {
+            let html = '';
+
+            for (let i = 0; i <= endDate.getDate() - startDate.getDate(); i++) {
+                const date = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate() + i);
+                const options = { month: 'long', day: 'numeric' };
+                const formattedDate = date.toLocaleDateString('ko-KR', options);
+
+                let gameText = '';
+                let detailsText = '';
+                let timeText = '';
+
+                if (i === 0) {
+                    gameText = '보스턴 vs 마이에미';
+                    detailsText =
+                        `<p style = " margin : 0px;">시간: 오후 3시<br>장소: 스타디움</p>`;
+                    timeText = `<button onclick="openYouTube()">하이라이트</button> 
+                    <button onclick="goToPage('other.html')">경기 요약</button>`;
+
+                }
+
+                if (i === 2) {
+                    gameText = '보스턴 vs 마이에미';
+                    detailsText =
+                        `<p style = " margin : 0px;">시간: 오후 3시<br>장소: 스타디움</p>`;
+                }
+
+                if (i === 4) {
+                    gameText = '보스턴 vs 마이에미';
+                    detailsText =
+                        `<p style = " margin : 0px;">시간: 오후 3시<br>장소: 스타디움</p>`;
+                    timeText = `<button onclick="openYouTube()">하이라이트</button> 
+                    <button onclick="goToPage('other.html')">경기 요약</button>`;
+                }
+
+                if (i === 5) {
+                    gameText = '보스턴 vs 마이에미';
+                    detailsText =
+                        `<p style = " margin : 0px;">시간: 오후 3시<br>장소: 스타디움</p>`;
+                    timeText = `<button onclick="openYouTube()">하이라이트</button> 
+                    <button onclick="goToPage('other.html')">경기 요약</button>`;
+                }
+
+                if (i === 6) {
+                    gameText = '보스턴 vs 마이에미';
+                    detailsText =
+                        `<p style = " margin : 0px;">시간: 오후 3시<br>장소: 스타디움</p>`;
+                    timeText = `<button onclick="openYouTube()">하이라이트</button> 
+                    <button onclick="goToPage('other.html')">경기 요약</button>`;
+                }
+
+                if (i === 8) {
+                    gameText = '보스턴 vs 마이에미';
+                    detailsText =
+                        `<p style = " margin : 0px;">시간: 오후 3시<br>장소: 스타디움</p>`;
+                    timeText = `<button onclick="openYouTube()">하이라이트</button> 
+                    <button onclick="goToPage('other.html')">경기 요약</button>`;
+                }
+
+                if (i === 9) {
+                    gameText = '보스턴 vs 마이에미';
+                    detailsText =
+                        `<p style = " margin : 0px;">시간: 오후 3시<br>장소: 스타디움</p>`;
+                    timeText = `<button onclick="openYouTube()">하이라이트</button> 
+                    <button onclick="goToPage('other.html')">경기 요약</button>`;
+                }
+
+                if (i === 11) {
+                    gameText = '보스턴 vs 마이에미';
+                    detailsText =
+                        `<p style = " margin : 0px;">시간: 오후 3시<br>장소: 스타디움</p>`;
+                    timeText = `<button onclick="openYouTube()">하이라이트</button> 
+                    <button onclick="goToPage('other.html')">경기 요약</button>`;
+                }
+
+                if (i === 14) {
+                    gameText = '보스턴 vs 마이에미';
+                    detailsText =
+                        `<p style = " margin : 0px;">시간: 오후 3시<br>장소: 스타디움</p>`;
+                    timeText = `<button onclick="openYouTube()">하이라이트</button> 
+                    <button onclick="goToPage('other.html')">경기 요약</button>`;
+                }
+
+                if (i === 15) {
+                    gameText = '보스턴 vs 마이에미';
+                    detailsText =
+                        `<p style = " margin : 0px;">시간: 오후 3시<br>장소: 스타디움</p>`;
+                    timeText = `<button onclick="openYouTube()">하이라이트</button> 
+                    <button onclick="goToPage('other.html')">경기 요약</button>`;
+                }
+
+                if (i === 16) {
+                    gameText = '보스턴 vs 마이에미';
+                    detailsText =
+                        `<p style = " margin : 0px;">시간: 오후 3시<br>장소: 스타디움</p>`;
+                    timeText = `<button onclick="openYouTube()">하이라이트</button> 
+                    <button onclick="goToPage('other.html')">경기 요약</button>`;
+                }
+
+                if (i === 20) {
+                    gameText = '보스턴 vs 마이에미';
+                    detailsText =
+                        `<p style = " margin : 0px;">시간: 오후 3시<br>장소: 스타디움</p>`;
+                    timeText = `<button onclick="openYouTube()">하이라이트</button> 
+                    <button onclick="goToPage('other.html')">경기 요약</button>`;
+                }
+
+                if (i === 22) {
+                    gameText = '보스턴 vs 마이에미';
+                    detailsText =
+                        `<p style = " margin : 0px;">시간: 오후 3시<br>장소: 스타디움</p>`;
+                    timeText = `<button onclick="openYouTube()">하이라이트</button> 
+                    <button onclick="goToPage('other.html')">경기 요약</button>`;
+                }
+
+                if (i === 23) {
+                    gameText = '보스턴 vs 마이에미';
+                    detailsText =
+                        `<p style = " margin : 0px;">시간: 오후 3시<br>장소: 스타디움</p>`;
+                    timeText = `<button onclick="openYouTube()">하이라이트</button> 
+                    <button onclick="goToPage('other.html')">경기 요약</button>`;
+                }
+
+                if (i === 25) {
+                    gameText = '보스턴 vs 마이에미';
+                    detailsText =
+                        `<p style = " margin : 0px;">시간: 오후 3시<br>장소: 스타디움</p>`;
+                    timeText = `<button onclick="openYouTube()">하이라이트</button> 
+                    <button onclick="goToPage('other.html')">경기 요약</button>`;
+                }
+
+                if (i === 28) {
+                    gameText = '보스턴 vs 마이에미';
+                    detailsText =
+                        `<p style = " margin : 0px;">시간: 오후 3시<br>장소: 스타디움</p>`;
+                    timeText = `<button onclick="openYouTube()">하이라이트</button> 
+                    <button onclick="goToPage('other.html')">경기 요약</button>`;
+                }
+
+
+                html += `<tr>
+                        <td style = " width: 100px; height : 40px; text-align : center;">${formattedDate}</td>
+                        <td class="game" style = " width: 1300px; height : 40px; text-align : center;">${gameText}</td>
+                        <td class="details" style = " width: 200px; height : 40px; text-align : center;">${detailsText}</td>
+                        <td class="time" style = " width: 200px; height : 40px; text-align : center;">${timeText}</td>
+                        </tr>`;
+            }
+
+            scheduleBody.innerHTML = html;
+        }
+
+        function openYouTube() {
+            window.open('https://www.youtube.com/watch?v=G7ghqX2RbPM', '_blank');
+        }
+
+        function goToPage(url) {
+            window.location.href = '#';
+        }
+
+        function updateDateDisplay() {
+            const date = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate() + currentDateIndex);
+            const options = { month: 'long', day: 'numeric' };
+            dateDisplay.textContent = date.toLocaleDateString('ko-KR', options);
+        }
+
+        function navigateToPrevDate() {
+            if (currentDateIndex > 0) {
+                currentDateIndex--;
+                updateDateDisplay();
+            }
+        }
+
+        function navigateToNextDate() {
+            if (currentDateIndex < endDate.getDate() - startDate.getDate()) {
+                currentDateIndex++;
+                updateDateDisplay();
+            }
+        }
+
+        prevDateBtn.addEventListener('click', navigateToPrevDate);
+        nextDateBtn.addEventListener('click', navigateToNextDate);
+
+        generateSchedule(); // 일정 표 생성
+        updateDateDisplay(); // 초기에 날짜를 표시합니다.
+
+    </script>
+</body>

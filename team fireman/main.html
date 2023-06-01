@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset = "utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital@0;1&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Team Fireman Web Programming Project</title>
+
+    <link rel="stylesheet" type="text/css" href="fadeaway_style.css">
+
+    <script>
+        $(document).ready(function() {
+            var slideContainer = $('#slide');
+            var slideWidth = slideContainer.width();
+            var slideCount = $('#slide>div').length;
+            var currentSlide = 0;
+   
+            function slideNext() {
+                slideContainer.css('transform', 'translateX(' + (-slideWidth * currentSlide / 5) + 'px)');
+                slideContainer.css('transition', 'transform 1s');
+                currentSlide = (currentSlide + 1) % slideCount;
+            }
+            
+            setInterval(slideNext, 2000);
+        });
+    </script>
+</head>
+
+<body>
+    <div id = "nav">
+        <div id = "logo">
+            <img src = "logo_slogan_black_rem.png" width = 300px height = 200px>
+        </div>
+            
+        <div id = "menu">
+            <ul>
+                <li class = "menu_list"><a href="#">Home</a></li>
+                <li class = "menu_list"><a href="#">Team Info</a></li>
+                <li class = "menu_list"><a href="#">Stat</a></li>
+                <li class = "menu_list"><a href="#">Schedule</a></li>
+                <li class = "menu_list"><a href="#">News</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id = "main_slide">
+        <div id = "slide">
+            <div><a href="#"><img src="N1.jpg" class = "slide_img"></a></div>
+            <div><a href="#"><img src="N2.avif" class = "slide_img"></a></div>
+            <div><a href="#"><img src="N3.jpg" class = "slide_img"></a></div>
+            <div><a href="#"><img src="N4.jpg" class = "slide_img"></a></div>
+            <div><a href="#"><img src="N5.jpg" class = "slide_img"></a></div>
+        </div>
+    </div>
+
+    <div id = "advertise">
+        <div class = "advertise_content" id = "advertise_text">
+            <br>
+            <h1>Check out the most popular Jordan shoes !</h2>
+            <p style = "font-size: 25px;">Discover the iconic style and performance of Jordan shoes. Shop now for the best selection.</p>
+            <br> <br>
+            <p style = "font-size: 20px;">
+                More Info For Jordan Shoes =>
+                <a href = "https://www.nike.com/kr/w/jordan-shoes-37eefzy7ok" target = "_blank">
+                    Nike Jordan
+                </a>
+            </p>
+        </div>
+
+        <div class = "advertise_content" id = "advertise_img">
+            <div>
+                <br>
+                <p style="font-size: 35px; text-align: center; margin: 0;">
+                    Buy Now
+                </p>
+                <a href="https://www.nike.com/kr/t/%EC%97%90%EC%96%B4-%EC%A1%B0%EB%8D%98-1-%EB%AF%B8%EB%93%9C-%EB%82%A8%EC%84%B1-%EC%8B%A0%EB%B0%9C-Fpo9YM44/DQ8426-060" target = "_blank">
+                    <img src="jordan.png" height="175px" style = "margin-top : 15px;">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id = "youtube">
+        <iframe  width="100%" height="750px" src="https://www.youtube.com/embed/T5zg1VTmCmY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+    
+    <div id="main_rank">
+        <div class="RANKING">
+            <table class="rank_table">
+                <caption><h2>Eastern</h2></caption>
+                <tr>
+                    <th>POSITION</th>
+                    <th>TEAM</th>
+                    <th>W</th>
+                    <th>L</th>
+                    <th>LAST 10</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td><a href="#"><img class="table_logo" src="./Team/MIL.svg">MIL</a></td>
+                    <td>58</td>
+                    <td>24</td>
+                    <td>6-4</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><a href="#"><img class="table_logo" src="./Team/BOS.svg">BOS</a></td>
+                    <td>57</td>
+                    <td>25</td>
+                    <td>8-2</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><a href="#"><img class="table_logo" src="./Team/PHI.svg">PHI</a></td>
+                    <td>54</td>
+                    <td>28</td>
+                    <td>5-5</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><a href="#"><img class="table_logo" src="./Team/CLE.svg">CLE</a></td>
+                    <td>51</td>
+                    <td>31</td>
+                    <td>7-3</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td><a href="#"><img class="table_logo" src="./Team/NYK.svg">NYK</a></td>
+                    <td>47</td>
+                    <td>35</td>
+                    <td>5-5</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td><a href="#"><img class="table_logo" src="./Team/BKN.svg">BKN</a></td>
+                    <td>45</td>
+                    <td>37</td>
+                    <td>6-4</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td><a href="#"><img class="table_logo" src="./Team/ATL.svg">ATL</a></td>
+                    <td>41</td>
+                    <td>41</td>
+                    <td>5-5</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="RANKING">
+            <table class="rank_table">
+                <caption><h2>Western</h2></caption>
+                <tr>
+                    <th>POSITION</th>
+                    <th>TEAM</th>
+                    <th>W</th>
+                    <th>L</th>
+                    <th>LAST 10</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td><a href="#"><img class="table_logo" src="./Team/DEN.svg">DEN</a></td>
+                    <td>53</td>
+                    <td>29</td>
+                    <td>5-5</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><a href="#"><img class="table_logo" src="./Team/MEM.svg">MEM</a></td>
+                    <td>51</td>
+                    <td>31</td>
+                    <td>6-4</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><a href="#"><img class="table_logo" src="./Team/SAC.svg">SAC</a></td>
+                    <td>48</td>
+                    <td>34</td>
+                    <td>5-5</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><a href="#"><img class="table_logo" src="./Team/PHX.svg">PHX</a></td>
+                    <td>45</td>
+                    <td>37</td>
+                    <td>7-3</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td><a href="#"><img class="table_logo" src="./Team/LAC.svg">LAC</a></td>
+                    <td>44</td>
+                    <td>38</td>
+                    <td>6-4</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td><a href="#"><img class="table_logo" src="./Team/GSW.svg">GSW</a></td>
+                    <td>44</td>
+                    <td>38</td>
+                    <td>8-2</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td><a href="#"><img class="table_logo" src="./Team/LAL.svg">LAL</a></td>
+                    <td>43</td>
+                    <td>39</td>
+                    <td>8-2</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class = "footer">
+        <div id = "foot_maker">
+            <p>
+                Software Web Programming Project Team Fireman <br>
+                CBNU Junior Kim Gang Min <br>
+                CBNU Junior Shin Seung Young <br>
+                CBNU Junior Lee Hyeon Do
+            </p>
+        </div>
+
+        <div id = "foot_sns">
+            <a href = "https://www.facebook.com/nba"><img src = "facebook.png" class = "footer_img"></a>
+            <a href = "https://www.instagram.com/nba/?hl=en"><img src = "insta.png" class = "footer_img"></a>
+            <a href = "https://twitter.com/NBA"><img src = "twitter.png" class = "footer_img"></a>
+            <a href = "https://www.youtube.com/user/NBA"><img src = "youtube.png" class = "footer_img"></a>
+            <a href = "https://www.tiktok.com/@nba"><img src = "tiktok.png" class = "footer_img"></a>
+        </div>
+    </div>
+</body>
+</html>

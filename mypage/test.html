@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital@0;1&display=swap" rel="stylesheet">
+
+    <title>Team Fireman Web Programming Project</title>
+
+    <link rel="stylesheet" type="text/css" href="fadeaway_style.css">
+
+    <title>경기 일정</title>
+
+
+</head>
+
+<body>
+
+    <div id="nav">
+        <div id="logo">
+            <img src="logo_slogan_black_rem.png" width=300px height=200px>
+        </div>
+
+        <div id="menu">
+            <ul>
+                <li class="menu_list"><a href="#">Home</a></li>
+                <li class="menu_list"><a href="#">Team Info</a></li>
+                <li class="menu_list"><a href="#">Stat</a></li>
+                <li class="menu_list"><a href="#">Schedule</a></li>
+                <li class="menu_list"><a href="#">News</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="date-navigation container" style="background-color:gray; border: 0px">
+        <button id="prev-date">이전</button>
+        <div id="date-display"></div>
+        <button id="next-date">다음</button>
+    </div>
+    <div>
+        <div class="date-nav-game">
+            <div class="logo-center">
+                <img src="./Team/MEM.svg" alt="Team 1" class="team-logo">
+                vs
+                <img src="./Team/SAC.svg" alt="Team 2" class="team-logo">
+
+            </div>
+            <div class="details">
+                <P> (승)111 : 109(패)</P>
+                <p><br>
+                    시간: 오후 3시<br>
+                    장소: 스타디움
+                </p>
+
+            </div>
+        </div>
+    </div>
+    <p>2022/23시즌 일정/결과</p>
+    <!-- 여기부터 -->
+    <div class="container">
+        <p style="width : 100%;">최근 2경기</p>
+        <div class="game">
+            <div class="logo-center">
+                <img src="./Team/LAL.svg" alt="Team 1" class="team-logo">
+                vs
+                <img src="./Team/LAC.svg" alt="Team 2" class="team-logo">
+
+            </div>
+            <div class="details">
+                <P> (패)103 : 104(승)</P>
+                <p>날짜: 2023년 6월 15일<br>
+                    시간: 오전 9시<br>
+                    장소: 스타디움
+                </p>
+
+            </div>
+        </div>
+        <div class="game">
+            <div class="logo-center">
+                <img src="./Team/MIL.svg" alt="Team 1" class="team-logo">
+                vs
+                <img src="./Team/DEN.svg" alt="Team 2" class="team-logo">
+
+            </div>
+            <div class="details">
+                <P> (패)98 : 107(승)</P>
+                <p>날짜: 2023년 6월 16일<br>
+                    시간: 오전 9시 30분<br>
+                    장소: 스타디움
+                </p>
+            </div>
+        </div>
+        <p style="width : 100%;">예정 2경기</p>
+        <div class="game">
+            <div class="logo-center">
+                <img src="./Team/BOS.svg" alt="Team 1" class="team-logo">
+                vs
+                <img src="./Team/ATL.svg" alt="Team 2" class="team-logo">
+
+            </div>
+            <div class="details">
+                <P> 미정 : 미정</P>
+
+                <p>날짜: 2023년 6월 17일<br>
+                    시간: 오전 9시 30분<br>
+                    장소: 스타디움
+                </p>
+            </div>
+        </div>
+        <div class="game">
+            <div class="logo-center">
+                <img src="./Team/CLE.svg" alt="Team 1" class="team-logo">
+                vs
+                <img src="./Team/GSW.svg" alt="Team 2" class="team-logo">
+
+            </div>
+            <div class="details">
+                <P> 미정 : 미정</P>
+                <p>날짜: 2023년 6월 18일<br>
+                    시간: 오전 10시<br>
+                    장소: 스타디움
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 여기까지 -->
+
+    <div class="container">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>날짜</th>
+                    <th>경기</th>
+                    <th>시간 장소</th>
+                    <th>경기 내용</th>
+                </tr>
+            </thead>
+            <tbody id="schedule-body">
+                <!-- 일정 내용이 여기에 동적으로 추가될 것입니다 -->
+            </tbody>
+        </table>
+
+
+    </div>
+
+    <script>
+
+        $(document).ready(function () {
+            // 일정 데이터 배열 예시
+            const scheduleData = [
+                {
+                    team1Logo: './Team/BKN.svg',
+                    team2Logo: './Team/CLE.svg',
+                    team1Score: '103',
+                    team2Score: '104',
+                    team1Result: '패',
+                    team2Result: '승',
+                    time: '오후 2시',
+                    location: '스타디움'
+                },
+                {
+                    team1Logo: './Team/BOS.svg',
+                    team2Logo: './Team/ATL.svg',
+                    team1Score: '93',
+                    team2Score: '105',
+                    team1Result: '패',
+                    team2Result: '승',
+                    time: '오후 1시',
+                    location: '스타디움'
+                }
+                ,
+                {
+                    team1Logo: './Team/PHI.svg',
+                    team2Logo: './Team/PHX.svg',
+                    team1Score: '132',
+                    team2Score: '131',
+                    team1Result: '승',
+                    team2Result: '패',
+                    time: '오전 10시',
+                    location: '스타디움'
+                }
+                ,
+                {
+                    team1Logo: './Team/SAC.svg',
+                    team2Logo: './Team/ATL.svg',
+                    team1Score: '99',
+                    team2Score: '123',
+                    team1Result: '패',
+                    team2Result: '승',
+                    time: '오전 11시',
+                    location: '스타디움'
+                }
+                ,
+                {
+                    team1Logo: './Team/MIL.svg',
+                    team2Logo: './Team/NYK.svg',
+                    team1Score: '107',
+                    team2Score: '89',
+                    team1Result: '승',
+                    team2Result: '패',
+                    time: '오전 10시',
+                    location: '스타디움'
+                }
+                // 다른 일정 데이터들...
+            ];
+
+            const dateDisplay = $('#date-display');
+            const prevDateBtn = $('#prev-date');
+            const nextDateBtn = $('#next-date');
+            const scheduleContainer = $('.date-nav-game');
+
+            const currentDate = new Date(); // 현재 날짜를 가져옵니다.
+            const startDate = new Date(currentDate.getFullYear(), 5, 1); // 6월 1일
+            const endDate = new Date(currentDate.getFullYear(), 5, 30); // 6월 30일
+
+            let currentDateIndex = Math.floor((currentDate - startDate) / (24 * 60 * 60 * 1000)); // 현재 날짜의 인덱스
+
+            // 일정을 표시하는 함수
+            function showSchedule(index) {
+                const schedule = scheduleData[index];
+
+                // 일정 요소들 업데이트
+                scheduleContainer.find('.team-logo').eq(0).attr('src', schedule.team1Logo);
+                scheduleContainer.find('.team-logo').eq(1).attr('src', schedule.team2Logo);
+                scheduleContainer.find('p').eq(0).html(`(${schedule.team1Result})${schedule.team1Score} : ${schedule.team2Score}(${schedule.team2Result})`);
+                scheduleContainer.find('p').eq(1).html(`<br>시간: ${schedule.time}<br>장소: ${schedule.location}`);
+
+                // 슬라이드 애니메이션
+                scheduleContainer.animate({ left: '-100%' }, 300, function () {
+                    scheduleContainer.css('left', '100%');
+                    scheduleContainer.appendTo(scheduleContainer.parent());
+                    scheduleContainer.animate({ left: '0' }, 300);
+                });
+            }
+
+            // 이전 날짜 버튼 클릭 시
+            prevDateBtn.click(function () {
+                currentDateIndex--;
+                if (currentDateIndex < 0) {
+                    currentDateIndex = scheduleData.length - 1;
+                }
+                showSchedule(currentDateIndex);
+            });
+
+            // 다음 날짜 버튼 클릭 시
+            nextDateBtn.click(function () {
+                currentDateIndex++;
+                if (currentDateIndex >= scheduleData.length) {
+                    currentDateIndex = 0;
+                }
+                showSchedule(currentDateIndex);
+            });
+
+            // 초기 일정 표시
+            showSchedule(currentDateIndex);
+        });
+        const dateDisplay = document.getElementById('date-display');
+        const prevDateBtn = document.getElementById('prev-date');
+        const nextDateBtn = document.getElementById('next-date');
+        const scheduleBody = document.getElementById('schedule-body');
+
+        const currentDate = new Date(); // 현재 날짜를 가져옵니다.
+        const startDate = new Date(currentDate.getFullYear(), 5, 1); // 5월 1일
+        const endDate = new Date(currentDate.getFullYear(), 5, 30); // 5월 30일
+
+        let currentDateIndex = Math.floor((currentDate - startDate) / (24 * 60 * 60 * 1000)); // 현재 날짜의 인덱스
+
+        function generateSchedule() {
+            let html = '';
+
+            for (let i = 0; i <= endDate.getDate() - startDate.getDate(); i++) {
+                const date = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate() + i);
+                const options = { month: 'long', day: 'numeric' };
+                const formattedDate = date.toLocaleDateString('ko-KR', options);
+
+                let gameText = '';
+                let detailsText = '';
+                let timeText = '';
+
+                if (i === 0) {
+                    gameText = '보스턴 vs 마이에미';
+                    detailsText =
+                        `<p style = " margin : 0px;">시간: 오후 3시<br>장소: 스타디움</p>`;
+                    timeText = `<button onclick="openYouTube()">하이라이트</button> 
+                    <button onclick="goToPage('other.html')">경기 요약</button>`;
+
+                }
+
+                if (i === 2) {
+                    gameText = '보스턴 vs 마이에미';
+                    detailsText =
+                        `<p style = " margin : 0px;">시간: 오후 3시<br>장소: 스타디움</p>`;
+                    timeText = `<button onclick="openYouTube()">하이라이트</button> 
+                    <button onclick="goToPage('other.html')">경기 요약</button>`;
+                }
+
+                if (i === 4) {
+                    gameText = '보스턴 vs 마이에미';
+                    detailsText =
+                        `<p style = " margin : 0px;">시간: 오후 3시<br>장소: 스타디움</p>`;
+                    timeText = `<button onclick="openYouTube()">하이라이트</button> 
+                    <button onclick="goToPage('other.html')">경기 요약</button>`;
+                }
+
+                if (i === 5) {
+                    gameText = '보스턴 vs 마이에미';
+                    detailsText =
+                        `<p style = " margin : 0px;">시간: 오후 3시<br>장소: 스타디움</p>`;
+                    timeText = `<button onclick="openYouTube()">하이라이트</button> 
+                    <button onclick="goToPage('other.html')">경기 요약</button>`;
+                }
+
+                if (i === 6) {
+                    gameText = '보스턴 vs 마이에미';
+                    detailsText =
+                        `<p style = " margin : 0px;">시간: 오후 3시<br>장소: 스타디움</p>`;
+                    timeText = `<button onclick="openYouTube()">하이라이트</button> 
+                    <button onclick="goToPage('other.html')">경기 요약</button>`;
+                }
+
+                if (i === 8) {
+                    gameText = '보스턴 vs 마이에미';
+                    detailsText =
+                        `<p style = " margin : 0px;">시간: 오후 3시<br>장소: 스타디움</p>`;
+                    timeText = `<button onclick="openYouTube()">하이라이트</button> 
+                    <button onclick="goToPage('other.html')">경기 요약</button>`;
+                }
+
+                if (i === 9) {
+                    gameText = '보스턴 vs 마이에미';
+                    detailsText =
+                        `<p style = " margin : 0px;">시간: 오후 3시<br>장소: 스타디움</p>`;
+                    timeText = `<button onclick="openYouTube()">하이라이트</button> 
+                    <button onclick="goToPage('other.html')">경기 요약</button>`;
+                }
+
+                if (i === 11) {
+                    gameText = '보스턴 vs 마이에미';
+                    detailsText =
+                        `<p style = " margin : 0px;">시간: 오후 3시<br>장소: 스타디움</p>`;
+                    timeText = `<button onclick="openYouTube()">하이라이트</button> 
+                    <button onclick="goToPage('other.html')">경기 요약</button>`;
+                }
+
+                if (i === 14) {
+                    gameText = '보스턴 vs 마이에미';
+                    detailsText =
+                        `<p style = " margin : 0px;">시간: 오후 3시<br>장소: 스타디움</p>`;
+                    timeText = `<button onclick="openYouTube()">하이라이트</button> 
+                    <button onclick="goToPage('other.html')">경기 요약</button>`;
+                }
+
+                if (i === 15) {
+                    gameText = '보스턴 vs 마이에미';
+                    detailsText =
+                        `<p style = " margin : 0px;">시간: 오후 3시<br>장소: 스타디움</p>`;
+                    timeText = `<button onclick="openYouTube()">하이라이트</button> 
+                    <button onclick="goToPage('other.html')">경기 요약</button>`;
+                }
+
+                if (i === 16) {
+                    gameText = '보스턴 vs 마이에미';
+                    detailsText =
+                        `<p style = " margin : 0px;">시간: 오후 3시<br>장소: 스타디움</p>`;
+                    timeText = `<button onclick="openYouTube()">하이라이트</button> 
+                    <button onclick="goToPage('other.html')">경기 요약</button>`;
+                }
+
+                if (i === 20) {
+                    gameText = '보스턴 vs 마이에미';
+                    detailsText =
+                        `<p style = " margin : 0px;">시간: 오후 3시<br>장소: 스타디움</p>`;
+                    timeText = `<button onclick="goToPage2('other.html')">경기 예정</button>`;
+                }
+
+                if (i === 22) {
+                    gameText = '보스턴 vs 마이에미';
+                    detailsText =
+                        `<p style = " margin : 0px;">시간: 오후 3시<br>장소: 스타디움</p>`;
+                    timeText = `<button onclick="goToPage2('other.html')">경기 예정</button>`;
+                }
+
+                if (i === 23) {
+                    gameText = '보스턴 vs 마이에미';
+                    detailsText =
+                        `<p style = " margin : 0px;">시간: 오후 3시<br>장소: 스타디움</p>`;
+                    timeText = `<button onclick="goToPage2('other.html')">경기 예정</button>`;
+                }
+
+                if (i === 25) {
+                    gameText = '보스턴 vs 마이에미';
+                    detailsText =
+                        `<p style = " margin : 0px;">시간: 오후 3시<br>장소: 스타디움</p>`;
+                    timeText = `<button onclick="goToPage2('other.html')">경기 예정</button>`;
+                }
+
+                if (i === 28) {
+                    gameText = '보스턴 vs 마이에미';
+                    detailsText =
+                        `<p style = " margin : 0px;">시간: 오후 3시<br>장소: 스타디움</p>`;
+                    timeText = `<button onclick="goToPage2('other.html')">경기 예정</button>`;
+                }
+
+
+                html += `<tr>
+                        <td style = " width: 100px; height : 40px; text-align : center;">${formattedDate}</td>
+                        <td class="game" style = " width: 1300px; height : 40px; text-align : center;">${gameText}</td>
+                        <td class="details" style = " width: 200px; height : 40px; text-align : center;">${detailsText}</td>
+                        <td class="time" style = " width: 200px; height : 40px; text-align : center;">${timeText}</td>
+                        </tr>`;
+            }
+
+            scheduleBody.innerHTML = html;
+        }
+
+        function openYouTube() {
+            window.open('https://www.youtube.com/watch?v=G7ghqX2RbPM', '_blank');
+        }
+
+        function goToPage(url) {
+            window.location.href = 'page2.html';
+        }
+
+        function goToPage2(url) {
+            window.location.href = 'page4.html';
+        }
+
+
+        function updateDateDisplay() {
+            const date = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate() + currentDateIndex);
+            const options = { month: 'long', day: 'numeric' };
+            dateDisplay.textContent = date.toLocaleDateString('ko-KR', options);
+        }
+
+        function navigateToPrevDate() {
+            if (currentDateIndex > 0) {
+                currentDateIndex--;
+                updateDateDisplay();
+            }
+        }
+
+        function navigateToNextDate() {
+            if (currentDateIndex < endDate.getDate() - startDate.getDate()) {
+                currentDateIndex++;
+                updateDateDisplay();
+            }
+        }
+
+        prevDateBtn.addEventListener('click', navigateToPrevDate);
+        nextDateBtn.addEventListener('click', navigateToNextDate);
+
+        generateSchedule(); // 일정 표 생성
+        updateDateDisplay(); // 초기에 날짜를 표시합니다.
+
+        //게임일정 토글 
+
+        $(document).ready(function () {
+            $('.game').on('click', function () {
+                $(this).find('.details').slideToggle();
+            });
+        });
+
+        //게임일정 케러셀
+
+        $(document).ready(function () {
+            $('.game-container').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                arrows: true,
+                dots: false
+            });
+        });
+
+        //부드러운 스크롤 
+
+
+        $(document).ready(function () {
+            $('a').on('click', function (event) {
+                if (this.hash !== '') {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    $('html, body').animate(
+                        {
+                            scrollTop: $(hash).offset().top
+                        },
+                        800
+                    );
+                }
+            });
+        });
+
+        //게임 날짜와 현재 날짜 비교
+        $(document).ready(function () {
+            var currentDate = new Date().getDate();
+            $('.game').each(function () {
+                var gameDate = parseInt($(this).find('.game-date').text());
+                if (gameDate === currentDate) {
+                    $(this).addClass('current-date');
+                }
+            });
+        });
+
+        //오늘의 게임 강조
+        $(document).ready(function () {
+            var currentDate = new Date();
+            var today = currentDate.toDateString();
+
+            $('.game').each(function () {
+                var gameDate = new Date($(this).find('.game-date').text()).toDateString();
+                if (gameDate === today) {
+                    $(this).addClass('today-game');
+                }
+            });
+        });
+
+
+
+    </script>
+
+
+
+
+
+
+
+</body>
