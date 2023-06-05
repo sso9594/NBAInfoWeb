@@ -1,0 +1,22 @@
+#team_info {
+    display: flex;
+    justify-content: center;
+}
+
+.region_team img{
+    width: 200px;
+    height: 200px;
+}
+
+.region {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.representative {
+    width: 600px;
+    height: 1000px;
+    position: relative;
+    transition: left 0.5s ease;
+}

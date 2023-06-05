@@ -12,22 +12,7 @@
 
     <link rel="stylesheet" type="text/css" href="./styles/main_style.css">
 
-    <script>
-        $(document).ready(function() {
-            var slideContainer = $('#slide');
-            var slideWidth = slideContainer.width();
-            var slideCount = $('#slide>div').length;
-            var currentSlide = 0;
-   
-            function slideNext() {
-                slideContainer.css('transform', 'translateX(' + (-slideWidth * currentSlide / 5) + 'px)');
-                slideContainer.css('transition', 'transform 1s');
-                currentSlide = (currentSlide + 1) % slideCount;
-            }
-            
-            setInterval(slideNext, 2000);
-        });
-    </script>
+    <script src="./js/main.js"></script>
 </head>
 
 <body>
@@ -39,7 +24,7 @@
         <div id = "menu">
             <ul>
                 <li class = "menu_list"><a href="main.html">Home</a></li>
-                <li class = "menu_list"><a href="#TeamInfo">Team Info</a></li>
+                <li class = "menu_list"><a href="team_info.html">Team Info</a></li>
                 <li class = "menu_list"><a href="#Stat">Stat</a></li>
                 <li class = "menu_list"><a href="#Schedule">Schedule</a></li>
                 <li class = "menu_list"><a href="news.html">News</a></li>
