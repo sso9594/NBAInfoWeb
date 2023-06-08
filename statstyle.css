@@ -1,0 +1,242 @@
+
+* {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.content{
+    width: 70%;
+    margin: auto;
+}
+.subnav{
+    border: none;
+    background-color: transparent;
+    font-size: 20px;
+}
+.subnav:hover{
+    color: gray;
+}
+#content_nav{
+    text-align: center;
+}
+
+.subnav {
+  display: inline-block;
+  margin: 5px;
+  cursor: pointer;
+}
+.tab {
+  display: none;
+}
+.selected {
+  color: gray;
+}
+
+#table_div{
+    border: 1px #a39485 solid;
+    box-shadow: 0 2px 5px rgba(0,0,0,.25);
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #42444e;
+}
+
+.firstRow {
+    background: black;
+    color: #fff;
+    height: 50px;
+    font-size: 17px;
+}
+.wholeRow {
+    background-color: #42444e;
+    color: white;
+    text-align: left;
+    height: 40px;
+    font-size: 15px;
+}
+.wholeRow:hover{
+    background-color: gray;
+}
+#buttonArea{
+    text-align: center;
+}
+#buttonArea button{
+    display: inline-block;
+}
+
+.lead_board{
+    width: 100%;
+    border-top: 1px lightgray solid;
+}
+
+.lead_board tr > th{
+    text-align: left;
+}
+
+.rowline > td{
+    border-top: 1px lightgray solid;
+    font-weight: bold;
+    color: #000;
+}
+
+.miniteam{
+    font-size: 10px;
+    color: lightgray;
+}
+
+.leaguebutton {
+    width: 130px;
+    height: 40px;
+    border: 2px solid #000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    background-color: #000;
+    color: #fff;
+    z-index: 1;
+}
+
+.tabbutton:after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: #e0e5ec;
+    transition: all 0.3s ease;
+}
+.tabbutton:hover {
+    color: #000;
+}
+.tabbutton:hover:after {
+    left: auto;
+    right: 0;
+    width: 100%;
+}
+.tabbutton:active {
+    top: 2px;
+}
+#showGraph{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+
+.chart-container{
+}
+
+.chartbutton{
+    border: none;
+    background-color: transparent;
+    font-size: 20px;
+    color: gray;
+}
+.chartbutton:hover{
+    color: lightgray;
+}
+.chartbutton {
+  display: inline-block;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  padding-left: 0;
+}
+.compare{
+    float: left;
+}
+.compbox{
+    width: 300px;
+    height: 300px;
+}
+#vsBox{
+    display: flex;
+    justify-content : center;
+    align-items : center;
+}
+#playertable{
+    width: 100%;
+}
+#playertable td{
+    border: 3px lightgrey solid;
+    cursor: pointer;
+
+}
+#playertable td:active{
+    background-color: lightgray;
+    transform: scale(0.98);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+#playertable td:hover{
+    background-color: #e0e5ec;
+}
+.player{
+    width: 20%;
+    height: 200px;
+    padding: 0;
+}
+.playerimg{
+    width: 100%;
+    height: 80%;
+}
+#cmpbutton{
+    width: 100px;
+    height: 50px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+#comparebox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    clear: both;
+}
+.selectedimg{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+  
+#cmpbutton {
+    width: 140px;
+    height: 45px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #fff;
+    background-color: #000;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+
+#cmpbutton:hover {
+    background-color: #2EE59D;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+#cmpbutton:active{
+    transform: scale(0.98);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+#playertable td {
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+}
+
+.playertxt{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset = "utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital@0;1&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link rel="stylesheet" type="text/css" href="fadeaway_style.css">
+    <link rel="stylesheet" type="text/css" href="statstyle.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="stat.js"></script>
+</head>
+
+<body>
+
+    <div id = "nav">
+        <div id = "logo">
+            <a href="main.html"><img src = "./image/logo_slogan_black_rem.png" width = 300px height = 200px></a>
+        </div>
+            
+        <div id = "menu">
+            <ul>
+                <li><a href="main.html">Home</a></li>
+                <li><a href="#">Team Info</a></li>
+                <li><a href="stat.html">Stat</a></li>
+                <li><a href="#">Schedule</a></li>
+                <li><a href="#">News</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content">
+        <div id="content_top" class="content"></div>
+            <h1>STATS</h1>
+            <p>Our homepage provides various statistics and figures of NBA teams and players. <br>
+            You can see various information through the tabs below, and it would be better not to stick to the numbers because they are fragmentary figures.</p>
+        </div>
+        <div id="content_nav" class="content">
+            <button id="defaultTab" class="subnav" onclick="showTab('LEAGUE_STANDINGS' , this)"><b>LEAGUE STANDINGS</b></button>
+            <button class="subnav" onclick="showTab('PLAYER_RANKING', this)"><b>PLAYER RANKING</b></button>
+            <button class="subnav" onclick="showTab('PLAYER_STATS', this)"><b>PLAYER STATS</b></button>
+        </div>
+        <div id="LEAGUE_STANDINGS" class="tab content">
+            <div id="buttonArea">
+                <button id="defaultButton" class="leaguebutton tabbutton" onclick="showTable('Eastern', this)"><b>Eastern Conference</b></button>
+                <button class="leaguebutton tabbutton" onclick="showTable('Western', this)"><b>Western Conference</b></button>
+            </div>
+            <div class="TB" id="Eastern">
+                <h2>Eastern Conference</h2>
+                <div id="table_div"></div>
+            </div>
+            <div class="TB" id="Western" style="display: none;">
+                <h2>Western Conference</h1>
+                <div id="table_div2"></div>
+            </div>
+        </div>
+          
+        <div id="PLAYER_RANKING" class="tab content">
+            <div>
+                <table class="lead_board">
+                    <tr>
+                        <th colspan="3"><button onclick="showChart(1)" data-target="curve_chart_1" class="chartbutton scrollBtn">POINTS PER GAME</button></th>
+                        <th colspan="3"><button onclick="showChart(2)" data-target="curve_chart_2" class="chartbutton scrollBtn">REBOUNDS PER GAME</button></th>
+                        <th colspan="3"><button onclick="showChart(3)" data-target="curve_chart_3" class="chartbutton scrollBtn">ASSISTS PER GAME</button></th>
+                    </tr>
+                    <tr class="rowline">
+                        <td>1.</td>
+                        <td>Devin Booker <span class="miniteam">PHX</span></td>
+                        <td>33.7</td>
+                        <td>1.</td>
+                        <td>Anthony Davis <span class="miniteam">LAL</span></td>
+                        <td>14.1</td>
+                        <td>1.</td>
+                        <td>Nikola Jokic <span class="miniteam">DEN</span></td>
+                        <td>10.3</td>	
+                    </tr>
+                    <tr>
+                        <td>2.</td>
+                        <td>Anthony Edwards <span class="miniteam">MIN</span></td>
+                        <td>31.6</td>
+                        <td>2.</td>
+                        <td>Nikola Jokic <span class="miniteam">DEN</span></td>
+                        <td>13.3</td>
+                        <td>2.</td>
+                        <td>Trae Young <span class="miniteam">ATL</span></td>
+                        <td>10.2</td>
+                    </tr>
+                    <tr>
+                        <td>3.</td>
+                        <td>Stephen Curry <span class="miniteam">GSW</span></td>
+                        <td>30.5</td>
+                        <td>3.</td>
+                        <td>Kevon Looney <span class="miniteam">GSW</span></td>
+                        <td>13.1</td>
+                        <td>3.</td>
+                        <td>James Harden <span class="miniteam">PHI</span></td>
+                        <td>8.3</td>
+                    </tr>
+                    <tr>
+                        <td>4.</td>
+                        <td>Nikola Jokic <span class="miniteam">DEN</span></td>
+                        <td>29.9</td>
+                        <td>4.</td>
+                        <td>Rudy Gobert <span class="miniteam">MIN</span></td>
+                        <td>12.2</td>
+                        <td>4.</td>
+                        <td>Jrue Holiday <span class="miniteam">MIL</span></td>
+                        <td>8.0</td>
+                    </tr>
+                    <tr>
+                        <td>5.</td>
+                        <td>Trae Young <span class="miniteam">ATL</span></td>
+                        <td>29.2</td>
+                        <td>5.</td>
+                        <td>Domantas Sabonis <span class="miniteam">SAC</span></td>
+                        <td>11.0</td>
+                        <td>5.</td>
+                        <td>De'Aaron Fox <span class="miniteam">SAC</span></td>
+                        <td>7.7</td>
+                    </tr>
+                    <tr>
+                        <th colspan="3"><button onclick="showChart(4)" data-target="curve_chart_4" class="chartbutton scrollBtn">BLOCKS PER GAME</button></th>
+                        <th colspan="3"><button onclick="showChart(5)" data-target="curve_chart_5" class="chartbutton scrollBtn">STEALS PER GAME</button></th>
+                        <th colspan="3"><button onclick="showChart(6)" data-target="curve_chart_6" class="chartbutton scrollBtn">FIELD GOAL PERCENTAGE</button></th>
+                    </tr>
+                    <tr class="rowline">
+                        <td>1.</td>
+                        <td>Anthony Davis <span class="miniteam">LAL</span></td>
+                        <td>3.1</td>
+                        <td>1.</td>
+                        <td>De'Aaron Fox <span class="miniteam">SAC</span></td>
+                        <td>2.1</td>
+                        <td>1.</td>
+                        <td>Nic Claxton <span class="miniteam">BKN</span></td>
+                        <td>72.0</td>
+                    </tr>
+                    <tr>
+                        <td>2.</td>
+                        <td>Joel Embiid <span class="miniteam">PHI</span></td>
+                        <td>2.8</td>
+                        <td>2.</td>
+                        <td>Jimmy Butler <span class="miniteam">MIA</span></td>
+                        <td>2.0</td>
+                        <td>2.</td>
+                        <td>Rudy Gobert <span class="miniteam">MIN</span></td>
+                        <td>63.0</td>
+                    </tr>
+                    <tr>
+                        <td>3.</td>
+                        <td>Anthony Edwards <span class="miniteam">MIN</span></td>
+                        <td>2.0</td>
+                        <td>2.</td>
+                        <td>Donovan Mitchell <span class="miniteam">CLE</span></td>
+                        <td>2.0</td>
+                        <td>3.</td>
+                        <td>Jarrett Allen <span class="miniteam">CLE</span></td>
+                        <td>61.1</td>
+                    </tr>
+                    <tr>
+                        <td>3.</td>
+                        <td>Jaren Jackson Jr. <span class="miniteam">MEM</span></td>
+                        <td>2.0</td>
+                        <td>2.</td>
+                        <td>Dejounte Murray <span class="miniteam">ATL</span></td>
+                        <td>2.0</td>
+                        <td>4.</td>
+                        <td>Clint Capela <span class="miniteam">ATL</span></td>
+                        <td>60.5</td>
+                    </tr>
+                    <tr>
+                        <td>5.</td>
+                        <td>Brook Lopez <span class="miniteam">MIL</span></td>
+                        <td>1.8</td>
+                        <td>5.</td>
+                        <td>James Harden <span class="miniteam">PHI</span></td>
+                        <td>1.8</td>
+                        <td>5.</td>
+                        <td>Devin Booker <span class="miniteam">PHX</span></td>
+                        <td>58.5</td>
+                    </tr>
+                    <tr>
+                        <th colspan="3"><button onclick="showChart(7)" data-target="curve_chart_7" class="chartbutton scrollBtn">THREE POINTERS MADE</button></th>
+                        <th colspan="3"><button onclick="showChart(8)" data-target="curve_chart_8" class="chartbutton scrollBtn">THREE POINT PERCENTAGE</button></th>
+                        <th colspan="3"><button onclick="showChart(9)" data-target="curve_chart_9" class="chartbutton scrollBtn">FANTASY POINTS PER GAME</button></th>
+                    </tr>
+                    <tr class="rowline">
+                        <td>1.</td>
+                        <td>Stephen Curry <span class="miniteam">GSW</span></td>
+                        <td>57</td>
+                        <td>1.</td>
+                        <td>Kawhi Leonard <span class="miniteam">LAC</span></td>
+                        <td>60.0</td>
+                        <td>1.</td>
+                        <td>Nikola Jokic <span class="miniteam">DEN</span></td>
+                        <td>63.7</td>
+                    </tr>
+                    <tr>
+                        <td>2.</td>
+                        <td>Jayson Tatum <span class="miniteam">BOS</span></td>
+                        <td>52</td>
+                        <td>2.</td>
+                        <td>Moses Moody <span class="miniteam">GSW</span></td>
+                        <td>59.1</td>
+                        <td>2.</td>
+                        <td>Anthony Edwards <span class="miniteam">MIN</span></td>
+                        <td>55.2</td>
+                    </tr>
+                    <tr>
+                        <td>3.</td>
+                        <td>Klay Thompson <span class="miniteam">GSW</span></td>
+                        <td>50</td>
+                        <td>3.</td>
+                        <td>Devin Booker <span class="miniteam">PHX</span></td>
+                        <td>50.8</td>
+                        <td>3.</td>
+                        <td>Devin Booker <span class="miniteam">PHX</span></td>
+                        <td>55.0</td>
+                    </tr>
+                    <tr>
+                        <td>4.</td>
+                        <td>Derrick White <span class="miniteam">BOS</span></td>
+                        <td>48</td>
+                        <td>4.</td>
+                        <td>Joe Ingles <span class="miniteam">MIL</span></td>
+                        <td>50.0</td>
+                        <td>4.</td>
+                        <td>Anthony Davis <span class="miniteam">LAL</span></td>
+                        <td>54.7</td>
+                    </tr>
+                    <tr>
+                        <td>5.</td>
+                        <td>Jamal Murray <span class="miniteam">DEN</span></td>
+                        <td>47</td>
+                        <td>4.</td>
+                        <td>Luke Kennard <span class="miniteam">MEM</span></td>
+                        <td>50.0</td>
+                        <td>5.  </td>
+                        <td>Jayson Tatum <span class="miniteam">BOS</span></td>
+                        <td>52.0</td>
+                    </tr>
+                </table>
+            </div>
+            <div id="showGraph">
+                <div id="curve_chart_1" class="chart-container"></div>
+                <div id="curve_chart_2" class="chart-container"></div>
+                <div id="curve_chart_3" class="chart-container"></div>
+                <div id="curve_chart_4" class="chart-container"></div>
+                <div id="curve_chart_5" class="chart-container"></div>
+                <div id="curve_chart_6" class="chart-container"></div>
+                <div id="curve_chart_7" class="chart-container"></div>
+                <div id="curve_chart_8" class="chart-container"></div>
+                <div id="curve_chart_9" class="chart-container"></div>
+            </div>
+        </div>
+
+        <div id="PLAYER_STATS" class="tab content">
+            <!-- Tab 2 내용 -->
+            <h2>Top 10 Player Comparison</h2>
+            <div id="vsBox"> 
+                <div class="compare compbox"></div>
+                <div>
+                    <h1 class="compare">VS</h1>
+                </div>
+                <div class="compare compbox"></div>
+            </div>
+            <div id="comparebox">
+                <button id="cmpbutton">Compare</button>
+            </div>
+            <div id="charbox"></div>
+            <div id="playerbox">
+                <table id="playertable">
+                    <tr>
+                        <td class="player"><img class="playerimg" src="./player/anthony.webp"><br><div class="playertxt">Anthony Davis</div></td>
+                        <td class="player"><img class="playerimg" src="./player/booker.webp"><br><div class="playertxt">Devin Booker</div></td>
+                        <td class="player"><img class="playerimg" src="./player/curry.webp"><br><div class="playertxt">Stephen Curry</div></td>
+                        <td class="player"><img class="playerimg" src="./player/fox.webp"><br><div class="playertxt">De'Aaron Fox</div></td>
+                        <td class="player"><img class="playerimg" src="./player/giannis.webp"><br><div class="playertxt" style="font-size: 15px;">Giannis Antetokounmpo</div></td>
+                    </tr>
+                    <tr>
+                        <td class="player"><img class="playerimg" src="./player/harden.avif"><br><div class="playertxt">James Harden</div></td>
+                        <td class="player"><img class="playerimg" src="./player/jimmy.webp"><br><div class="playertxt">Jimmy Butler</div></td>
+                        <td class="player"><img class="playerimg" src="./player/joel.webp"><br><div class="playertxt">Joel Embiid</div></td>
+                        <td class="player"><img class="playerimg" src="./player/lebron.webp"><br><div class="playertxt">LeBron James</div></td>
+                        <td class="player"><img class="playerimg" src="./player/trae.webp"><br><div class="playertxt">Trae Young</div></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class = "footer">
+        <div id = "foot_maker">
+            <p>
+                Software Web Programming Project Team Fireman <br>
+                CBNU Junior Kim Gang Min <br>
+                CBNU Junior Shin Seung Young <br>
+                CBNU Junior Lee Hyeon Do
+            </p>
+        </div>
+
+        <div id = "foot_sns">
+            <a href = "https://www.facebook.com/nba"><img src = "./image/facebook.png" class = "footer_img"></a>
+            <a href = "https://www.instagram.com/nba/?hl=en"><img src = "./image/insta.png" class = "footer_img"></a>
+            <a href = "https://twitter.com/NBA"><img src = "./image/twitter.png" class = "footer_img"></a>
+            <a href = "https://www.youtube.com/user/NBA"><img src = "./image/youtube.png" class = "footer_img"></a>
+            <a href = "https://www.tiktok.com/@nba"><img src = "./image/tiktok.png" class = "footer_img"></a>
+        </div>
+    </div>
+
+    <script> 
+        
+    </script>
+</body>
+</html>
